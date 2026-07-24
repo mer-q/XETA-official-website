@@ -1,0 +1,183 @@
+---
+import '../../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 字特智能</title>
+    <meta name="description" content="字特智能 - 关于我们，了解我们的使命、愿景与全球团队布局。">
+    
+    <link rel="icon" href="/wp-content/uploads/2024/09/cropped-logo图形-彩色-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/wp-content/uploads/2024/09/cropped-logo图形-彩色-180x180.png">
+    
+    <link rel="stylesheet" href="/wp-content/themes/xetabyte_ver2/animate.css?ver=4.1.1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body class="wp-singular page-template page-template-page-about page-template-page-about-php page page-id-193 wp-custom-logo wp-theme-xetabyte_ver2">
+
+    <!-- 顶部导航栏 -->
+    <header class="top-header">
+        <div class="header-inner">
+            <a href="/" class="custom-logo-link" rel="home">
+                <img width="264" height="64" src="/wp-content/uploads/2025/08/cropped-logo.png" class="custom-logo" alt="字特智能" decoding="async" />
+            </a>                
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="切换菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="top-navi" id="topNavi">        
+                <ul id="menu-new_main_menu" class="menu">
+                    <li class="menu-item"><a href="/">首页</a></li>
+                    <li class="menu-item"><a href="/核心产品/">核心产品</a></li>
+                    <li class="menu-item"><a href="/数智化服务/">数智化服务</a></li>
+                    <li class="menu-item"><a href="/资讯中心/">资讯中心</a></li>
+                    <li class="menu-item current-menu-item current_page_item"><a href="/关于我们/" aria-current="page">关于我们</a></li>
+                </ul> 
+            </nav>
+            
+            <div id="language_box_wrapper">
+                <span class="language_label">语言/Languages:</span>
+                <div id="language_box">
+                    <select name="lang_choice_1" id="lang_choice_1" class="pll-switcher-select">
+                        <option value="/关于我们/" selected>简体中文</option>
+                        <option value="/en/about-us/">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="inner_page about_inner_page">
+        <!-- 头部 Banner -->
+        <div class="about_page_header">
+            <div class="about_page_header_inner">
+                <h1 class="about_page_title wow fadeInUp">关于我们</h1>
+                <span class="about_page_subtitle wow fadeInUp">
+                    字特智能是一家发源于德国、布局全球的汽车智能化科技公司。<br>
+                    公司聚焦新一代基于大模型的智能座舱和其应用生态，<br>
+                    通过打造国际化汽车数智化平台，服务全球汽车行业在智能化体系的落地和提升。<br><br><br>
+                    核心团队来自中德美汽车产业+人工智能领域，<br>
+                    有开阔的国际视野，在汽车产业界、学术界有广泛的联系和深厚的背景。
+                </span>
+                <div class="about_page_header_inner_item_box">
+                    <div class="about_page_header_inner_item_box_item wow fadeInUp">
+                        <h3>使命</h3>
+                        <span>打造国际汽车智能化生态，共创全球智能汽车时代</span>
+                    </div>
+                    <div class="about_page_header_inner_item_box_item wow fadeInUp">
+                        <h3>愿景</h3>
+                        <span>成为国际领先的汽车智能化供应商</span>
+                    </div>
+                    <div class="about_page_header_inner_item_box_item wow fadeInUp">
+                        <h3>价值观</h3>
+                        <span>客户至上，专业尽责，创新突破</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 地址与办公中心切换 -->
+        <div class="about_page_address wow fadeInUp">
+            <canvas id="earth"></canvas>
+            <div id="map_point">
+                <a class="points active"></a>
+                <a class="points"></a>
+            </div>
+            <div class="address_slider">
+                <div class="address_slider_box">
+                    <div class="address_slider_box_item active">
+                        <div class="_text">
+                            <h3>中国总部：上海浦东软件园</h3>
+                            <p>公司管理、商务拓展、产品研发</p>
+                            <p>地址：上海浦东软件园郭守敬路489号1号楼</p>
+                        </div>
+                        <div class="_banner" style='background:url("/uploads/2024/11/address_shanghai.png") no-repeat center center; background-size: cover;'></div>
+                    </div>
+                    <div class="address_slider_box_item">
+                        <div class="_text">
+                            <h3>海外中心：德国慕尼黑</h3>
+                            <p>全球市场调研、产品设计、海外运营</p>
+                            <p>地址：Fürstenrieder Str. 5, 80687 München</p>
+                        </div>
+                        <div class="_banner" style='background:url("/uploads/2024/11/address_germany.jpg") no-repeat center center; background-size: cover;'></div>
+                    </div>
+                    <ul class="address_slider_navi">
+                        <li class="_item active"></li>
+                        <li class="_item"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 Footer -->
+    <footer class="footer">
+        <div class="footer_inner">
+            <div class="footer_inner_left">
+                <div class="content">
+                    <h4 class="title">联系我们</h4>
+                    <p>邮箱地址：<a href="mailto:info@xetabyte.ai">info@xetabyte.ai</a></p>
+                </div>
+                <div class="content">
+                    <h4 class="title">商务合作</h4>
+                    <p>邮箱地址：<a href="mailto:business@xetabyte.ai">business@xetabyte.ai</a></p>
+                </div>
+            </div>
+            <div class="footer_inner_right">
+                <h4>关注字特智能</h4>
+                <div class="wechat_qrcode"></div>
+                <p>官方微信</p>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="footer_bottom_inner">
+                <p class="left">
+                    Copyright © 2025-2026 字特智能科技（上海）有限公司 版权所有
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 客户端脚本 -->
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 语言切换
+            const langSelect = document.getElementById('lang_choice_1');
+            if (langSelect) {
+                langSelect.addEventListener('change', (e) => {
+                    window.location.href = e.target.value;
+                });
+            }
+
+            // 移动端菜单
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const topNavi = document.getElementById('topNavi');
+            if (mobileMenuBtn && topNavi) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    topNavi.classList.toggle('mobile-open');
+                    document.body.classList.toggle('menu-open');
+                });
+            }
+
+            // 地址卡片切换
+            const items = document.querySelectorAll('.address_slider_box_item');
+            const navs = document.querySelectorAll('.address_slider_navi li');
+            navs.forEach((nav, index) => {
+                nav.addEventListener('click', () => {
+                    items.forEach(el => el.classList.remove('active'));
+                    navs.forEach(el => el.classList.remove('active'));
+                    if (items[index]) items[index].classList.add('active');
+                    nav.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

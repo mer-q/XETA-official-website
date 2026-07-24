@@ -1,0 +1,105 @@
+---
+const features = [
+  {
+    icon: "⚡",
+    title: "极速分布式计算 Engine",
+    description: "内置高并行计算内核，大幅提升集群吞吐效能，任务编排响应缩短至微秒级。"
+  },
+  {
+    icon: "🧠",
+    title: "自适应 AI 代理网格",
+    description: "智能自主调度代理系统，实现跨边缘与云端复杂逻辑的分布式自愈与弹性扩展。"
+  },
+  {
+    icon: "🛡️",
+    title: "零信任数据安全架构",
+    description: "企业级端到端加密与访问控制体系，符合国际合规标准，保障核心数据资产安全。"
+  },
+  {
+    icon: "📊",
+    title: "实时全栈数据感知",
+    description: "毫秒级实时链路追踪与指标遥测，一站式可视化感知架构运行态势。"
+  }
+];
+---
+
+<section id="features" class="features-section">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">核心技术优势</h2>
+      <p class="section-subtitle">重新定义企业级分布式智能系统的性能与可用性标杆</p>
+    </div>
+
+    <div class="features-grid">
+      {features.map(f => (
+        <div class="feature-card glass-card">
+          <div class="feature-icon">{f.icon}</div>
+          <h3 class="feature-title">{f.title}</h3>
+          <p class="feature-desc">{f.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features-section {
+    padding: 100px 24px;
+    position: relative;
+  }
+
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin-bottom: 12px;
+  }
+
+  .section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+
+  .feature-card {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .feature-icon {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+  }
+
+  .feature-title {
+    font-size: 1.25rem;
+    color: var(--text-main);
+    margin-bottom: 12px;
+  }
+
+  .feature-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+</style>

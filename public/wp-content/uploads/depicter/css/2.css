@@ -1,0 +1,49 @@
+
+.depicter-2-element-7 .depicter-symbol-container{
+	fill:#000;
+}
+.depicter-2-element-8 .depicter-bullet-item{
+	background-color:rgba(0, 0, 0, 0.5);
+	border-radius:5px 5px 5px 5px ;
+	width:9px;
+	height:9px;
+}
+.depicter-2-element-8 .depicter-bullet-item.depicter-bullet-active{
+	background-color:#000;
+}
+.depicter-2-element-8 .depicter-bullets-wrapper{
+	gap:5px;
+	flex-direction:row;
+}
+.depicter-2-element-9 .depicter-symbol-container{
+	fill:#000;
+}
+.depicter-2-element-10 .depicter-symbol-container{
+	fill:#000;
+}
+.depicter-2-element-11 .depicter-bullet-item{
+	background-color:rgba(0, 0, 0, 0.5);
+	border-radius:5px 5px 5px 5px ;
+	width:9px;
+	height:9px;
+}
+.depicter-2-element-11 .depicter-bullet-item.depicter-bullet-active{
+	background-color:#000;
+}
+.depicter-2-element-11 .depicter-bullets-wrapper{
+	gap:5px;
+	flex-direction:row;
+}
+.depicter-2-element-12 .depicter-symbol-container{
+	fill:#000;
+}
+.depicter-revert .depicter-2-section-1 .depicter-section-background{
+	background-color:#FFF;
+}
+.depicter-revert .depicter-2-section-3 .depicter-section-background{
+	background-color:#FFF;
+}
+.depicter-revert .depicter-2-section-5 .depicter-section-background{
+	background-color:#FFF;
+}
+

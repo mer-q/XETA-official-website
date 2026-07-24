@@ -1,0 +1,30 @@
+
+.depicter-9-element-7 .depicter-symbol-container{
+	fill:#FFF;
+}
+.depicter-9-element-8 .depicter-bullet-item{
+	background-color:rgba(0,0,0,0.5);
+	border-radius:5px 5px 5px 5px ;
+	width:9px;
+	height:9px;
+}
+.depicter-9-element-8 .depicter-bullet-item.depicter-bullet-active{
+	background-color:rgba(0,0,0,1);
+}
+.depicter-9-element-8 .depicter-bullets-wrapper{
+	gap:5px;
+	flex-direction:row;
+}
+.depicter-9-element-9 .depicter-symbol-container{
+	fill:#FFF;
+}
+.depicter-revert .depicter-9-section-1 .depicter-section-background{
+	background-color:transparent;
+}
+.depicter-revert .depicter-9-section-3 .depicter-section-background{
+	background-color:transparent;
+}
+.depicter-revert .depicter-9-section-5 .depicter-section-background{
+	background-color:transparent;
+}
+

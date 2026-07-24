@@ -1,0 +1,103 @@
+---
+---
+
+<header class="navbar-header">
+  <div class="navbar-container">
+    <a href="/" class="brand-logo">
+      <span class="logo-badge">X</span>
+      <span class="brand-name">XETA<span class="dot">.</span></span>
+    </a>
+    
+    <nav class="nav-links">
+      <a href="#features" class="nav-item">产品特性</a>
+      <a href="#solutions" class="nav-item">解决方案</a>
+      <a href="#about" class="nav-item">关于 XETA</a>
+      <a href="#contact" class="nav-item">联系我们</a>
+    </nav>
+    
+    <div class="nav-actions">
+      <a href="#contact" class="btn-primary">探索系统 &rarr;</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .navbar-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 20px 0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(7, 9, 14, 0.7);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: #fff;
+    font-weight: 800;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    box-shadow: 0 0 15px var(--primary-glow);
+  }
+
+  .brand-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-main);
+    font-family: var(--font-heading);
+    letter-spacing: -0.03em;
+  }
+
+  .dot {
+    color: var(--primary);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-item {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .nav-item:hover {
+    color: var(--primary);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>

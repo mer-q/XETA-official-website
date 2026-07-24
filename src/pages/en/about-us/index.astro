@@ -1,0 +1,176 @@
+---
+import '../../../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Xetabyte</title>
+    <meta name="description" content="About Us - XETA Intelligence: A German-Founded, Globally-Positioned Automotive Smart Tech Company.">
+    
+    <link rel="icon" href="/uploads/2024/09/cropped-logo图形-彩色-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/uploads/2024/09/cropped-logo图形-彩色-180x180.png">
+    
+    <link rel="stylesheet" href="/wp-content/themes/xetabyte_ver2/animate.css?ver=4.1.1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body class="wp-singular page-template page-template-page-about page-template-page-about-php page wp-custom-logo wp-theme-xetabyte_ver2">
+
+    <!-- Header Navigation -->
+    <header class="top-header">
+        <div class="header-inner">
+            <a href="/en/" class="custom-logo-link" rel="home">
+                <img width="264" height="64" src="/uploads/2025/08/cropped-logo.png" class="custom-logo" alt="Xetabyte" decoding="async" />
+            </a>                
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="top-navi" id="topNavi">        
+                <ul id="menu-new_main_menu_en" class="menu">
+                    <li class="menu-item"><a href="/en/">HOME</a></li>
+                    <li class="menu-item"><a href="/en/xeta-products/">PRODUCTS</a></li>
+                    <li class="menu-item"><a href="/en/xeta-services/">SERVICES</a></li>
+                    <li class="menu-item current-menu-item current_page_item"><a href="/en/about-us/" aria-current="page">ABOUT US</a></li>
+                </ul> 
+            </nav>
+            
+            <div id="language_box_wrapper">
+                <span class="language_label">Languages:</span>
+                <div id="language_box">
+                    <select name="lang_choice_1" id="lang_choice_1" class="pll-switcher-select">
+                        <option value="/关于我们/">简体中文</option>
+                        <option value="/en/about-us/" selected>English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="inner_page about_inner_page">
+        <!-- Header Banner -->
+        <div class="about_page_header">
+            <div class="about_page_header_inner">
+                <h1 class="about_page_title wow fadeInUp">ABOUT US</h1>
+                <span class="about_page_subtitle wow fadeInUp">
+                    XETA Intelligence: A German-Founded, Globally-Positioned Automotive Smart Tech Company.<br>
+                    We focus on next-generation LLM-based Intelligent Cockpits and their application ecosystems,<br>
+                    building an international digital intelligence platform to deploy and enhance smart systems globally.<br><br><br>
+                    Our core team comprises experts from the automotive and AI sectors across China, Germany, and the US,<br>
+                    bringing deep industry and academic connections with a broad international perspective.
+                </span>
+                <div class="about_page_header_inner_item_box">
+                    <div class="about_page_header_inner_item_box_item wow fadeInUp">
+                        <h3>MISSION</h3>
+                        <span>Building the Global Automotive Smart Ecosystem. Driving the Next Era of Auto Intelligence.</span>
+                    </div>
+                    <div class="about_page_header_inner_item_box_item wow fadeInUp">
+                        <h3>VISION</h3>
+                        <span>Global Leader in Automotive Intelligence.</span>
+                    </div>
+                    <div class="about_page_header_inner_item_box_item wow fadeInUp">
+                        <h3>VALUES</h3>
+                        <span>Customer First. Professional Integrity. Pioneering Innovation.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Locations -->
+        <div class="about_page_address wow fadeInUp">
+            <canvas id="earth"></canvas>
+            <div id="map_point">
+                <a class="points active"></a>
+                <a class="points"></a>
+            </div>
+            <div class="address_slider">
+                <div class="address_slider_box">
+                    <div class="address_slider_box_item active">
+                        <div class="_text">
+                            <h3>Asia Headquarter: Shanghai, China</h3>
+                            <p>Corporate Management, Business Development, Product R&amp;D</p>
+                            <p>Address: Building 1, Shanghai Pudong Software Park,<br>No. 489 Guoshoujing Road, Shanghai.</p>
+                        </div>
+                        <div class="_banner" style='background:url("/uploads/2024/11/address_shanghai.png") no-repeat center center; background-size: cover;'></div>
+                    </div>
+                    <div class="address_slider_box_item">
+                        <div class="_text">
+                            <h3>Overseas Center: Munich, Germany</h3>
+                            <p>Global Market Research, Product Design, International Operations</p>
+                            <p>Address: Fürstenrieder Str. 5, 80687 München, Germany.</p>
+                        </div>
+                        <div class="_banner" style='background:url("/uploads/2024/11/address_germany.jpg") no-repeat center center; background-size: cover;'></div>
+                    </div>
+                    <ul class="address_slider_navi">
+                        <li class="_item active"></li>
+                        <li class="_item"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer_inner">
+            <div class="footer_inner_left">
+                <div class="content">
+                    <h4 class="title">CONTACT US</h4>
+                    <p>Email: <a href="mailto:info@xetabyte.ai">info@xetabyte.ai</a></p>
+                </div>
+                <div class="content">
+                    <h4 class="title">BUSINESS COOPERATION</h4>
+                    <p>Email: <a href="mailto:business@xetabyte.ai">business@xetabyte.ai</a></p>
+                </div>
+            </div>
+            <div class="footer_inner_right">
+                <h4>FOLLOW XETA</h4>
+                <div class="wechat_qrcode"></div>
+                <p>Official WeChat</p>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="footer_bottom_inner">
+                <p class="left">Copyright © 2025-2026 XETA Intelligence Technology (Shanghai) Co., Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langSelect = document.getElementById('lang_choice_1');
+            if (langSelect) {
+                langSelect.addEventListener('change', (e) => {
+                    window.location.href = e.target.value;
+                });
+            }
+
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const topNavi = document.getElementById('topNavi');
+            if (mobileMenuBtn && topNavi) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    topNavi.classList.toggle('mobile-open');
+                    document.body.classList.toggle('menu-open');
+                });
+            }
+
+            const items = document.querySelectorAll('.address_slider_box_item');
+            const navs = document.querySelectorAll('.address_slider_navi li');
+            navs.forEach((nav, index) => {
+                nav.addEventListener('click', () => {
+                    items.forEach(el => el.classList.remove('active'));
+                    navs.forEach(el => el.classList.remove('active'));
+                    if (items[index]) items[index].classList.add('active');
+                    nav.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

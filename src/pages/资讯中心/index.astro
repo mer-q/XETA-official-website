@@ -1,0 +1,179 @@
+---
+import '../../styles/global.css';
+
+const newsArticles = [
+  {
+    title: "字特智能受邀出席上海市科创巴西人工智能代表团交流活动，深化全球业务布局",
+    date: "2025-08-04",
+    img: "/uploads/2025/09/640-6.jpeg",
+    url: "/5月汽车商品出口金额206-7亿美元-同比增长12-2/"
+  },
+  {
+    title: "字特智能荣获 EXIN DPO 数据保护官认证，以国际专业标准护航智能汽车数据安全",
+    date: "2025-06-28",
+    img: "/uploads/2025/09/640.jpeg",
+    url: "/5月汽车商品出口金额206-7亿美元-同比增长12-2/"
+  },
+  {
+    title: "汽车出海高峰论坛主题演讲｜字特智能CEO李栋：出海欧洲，如何攻克老牌汽车强国市场？",
+    date: "2025-04-30",
+    img: "/uploads/2025/09/640-2.jpeg",
+    url: "/长安汽车将在欧洲建厂，已启动选址评估工作/"
+  },
+  {
+    title: "创始人手记｜慕尼黑春季汽车人沙龙：一群留德汽车人的思辨与火花",
+    date: "2025-04-19",
+    img: "/uploads/2025/09/640-3.jpeg",
+    url: "/5月汽车商品出口金额206-7亿美元-同比增长12-2/"
+  },
+  {
+    title: "从中国走向世界！字特智能助力智能化汽车出海，为打造汽车强国贡献力量",
+    date: "2024-11-18",
+    img: "/uploads/2025/09/640.png",
+    url: "/比亚迪启动巴西电动汽车组装生产/"
+  },
+  {
+    title: "字特智能荣获2024上海市浦东新区「海创之星」奖项！打造国际汽车智能化生态",
+    date: "2024-09-20",
+    img: "/uploads/2025/09/微信圖片_2026-01-24_222311_853.png",
+    url: "/特斯拉将集成grok/"
+  }
+];
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资讯中心 - 字特智能</title>
+    <meta name="description" content="字特智能 - 资讯中心，了解最新公司动态与行业资讯。">
+    
+    <link rel="icon" href="/wp-content/uploads/2024/09/cropped-logo图形-彩色-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/wp-content/uploads/2024/09/cropped-logo图形-彩色-180x180.png">
+    
+    <link rel="stylesheet" href="/wp-content/themes/xetabyte_ver2/animate.css?ver=4.1.1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body class="wp-singular page-template page-template-page-news page-template-page-news-php page wp-custom-logo wp-theme-xetabyte_ver2">
+
+    <!-- 顶部导航栏 -->
+    <header class="top-header">
+        <div class="header-inner">
+            <a href="/" class="custom-logo-link" rel="home">
+                <img width="264" height="64" src="/wp-content/uploads/2025/08/cropped-logo.png" class="custom-logo" alt="字特智能" decoding="async" />
+            </a>                
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="切换菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="top-navi" id="topNavi">        
+                <ul id="menu-new_main_menu" class="menu">
+                    <li class="menu-item"><a href="/">首页</a></li>
+                    <li class="menu-item"><a href="/核心产品/">核心产品</a></li>
+                    <li class="menu-item"><a href="/数智化服务/">数智化服务</a></li>
+                    <li class="menu-item current-menu-item current_page_item"><a href="/资讯中心/" aria-current="page">资讯中心</a></li>
+                    <li class="menu-item"><a href="/关于我们/">关于我们</a></li>
+                </ul> 
+            </nav>
+            
+            <div id="language_box_wrapper">
+                <span class="language_label">语言/Languages:</span>
+                <div id="language_box">
+                    <select name="lang_choice_1" id="lang_choice_1" class="pll-switcher-select">
+                        <option value="/资讯中心/" selected>简体中文</option>
+                        <option value="/en/">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="inner_page">
+        <div class="news_page_top">
+            <h1 class="inner_page_intro_box_title">资讯中心</h1>
+            <div class="news_category_navigation">
+                <a href="#" class="news_category_btn active">X NEWS</a>
+                <a href="#" class="news_category_btn">科技要闻</a>
+            </div>
+        </div>
+
+        <div class="news_content_box">
+            <div class="news_content_box_inner">
+                <div class="news_list_container">
+                    <div class="news_list" id="news-list">
+                        {newsArticles.map(article => (
+                            <article class="news_item">
+                                <a href={article.url} class="news_item_link">
+                                    <div class="news_item_image">
+                                        <img src={article.img} alt={article.title} />
+                                    </div>
+                                    <div class="news_item_content">
+                                        <h3 class="news_item_title">{article.title}</h3>
+                                        <div class="news_item_meta">
+                                            <span class="news_item_date">{article.date}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 Footer -->
+    <footer class="footer">
+        <div class="footer_inner">
+            <div class="footer_inner_left">
+                <div class="content">
+                    <h4 class="title">联系我们</h4>
+                    <p>邮箱地址：<a href="mailto:info@xetabyte.ai">info@xetabyte.ai</a></p>
+                </div>
+                <div class="content">
+                    <h4 class="title">商务合作</h4>
+                    <p>邮箱地址：<a href="mailto:business@xetabyte.ai">business@xetabyte.ai</a></p>
+                </div>
+            </div>
+            <div class="footer_inner_right">
+                <h4>关注字特智能</h4>
+                <div class="wechat_qrcode"></div>
+                <p>官方微信</p>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="footer_bottom_inner">
+                <p class="left">
+                    Copyright © 2025-2026 字特智能科技（上海）有限公司 版权所有
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 客户端脚本 -->
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langSelect = document.getElementById('lang_choice_1');
+            if (langSelect) {
+                langSelect.addEventListener('change', (e) => {
+                    window.location.href = e.target.value;
+                });
+            }
+
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const topNavi = document.getElementById('topNavi');
+            if (mobileMenuBtn && topNavi) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    topNavi.classList.toggle('mobile-open');
+                    document.body.classList.toggle('menu-open');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

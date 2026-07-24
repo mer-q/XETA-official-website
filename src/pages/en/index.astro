@@ -1,0 +1,312 @@
+---
+import '../../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xetabyte</title>
+    <meta name="description" content="Make Mobility Space Smarter - XETA Intelligence">
+    
+    <!-- 站点 Favicon -->
+    <link rel="icon" href="/uploads/2024/09/cropped-logo图形-彩色-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/uploads/2024/09/cropped-logo图形-彩色-180x180.png">
+    
+    <!-- 引入原版 animate.css 与 Swiper 样式 -->
+    <link rel="stylesheet" href="/wp-content/themes/xetabyte_ver2/animate.css?ver=4.1.1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body class="home blog logged-in wp-custom-logo wp-theme-xetabyte_ver2">
+
+    <!-- 顶部 Header 导航栏 -->
+    <header class="top-header">
+        <div class="header-inner">
+            <a href="/en/" class="custom-logo-link" rel="home" aria-current="page">
+                <img width="264" height="64" src="/uploads/2025/08/cropped-logo.png" class="custom-logo" alt="Xetabyte" decoding="async" />
+            </a>                
+            
+            <!-- 手机版菜单按钮 -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="top-navi" id="topNavi">        
+                <ul id="menu-new_main_menu_en" class="menu">
+                    <li id="menu-item-303" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-303">
+                        <a href="/en/" aria-current="page">HOME</a>
+                    </li>
+                    <li id="menu-item-307" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-307">
+                        <a href="/en/xeta-products/">PRODUCTS</a>
+                    </li>
+                    <li id="menu-item-310" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-has-children menu-item-310">
+                        <a href="/en/xeta-services/">SERVICES</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-311" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-311"><a href="/en/xeta-services/#service01">XETA&nbsp;Global&nbsp;Auto<br>Service&nbsp;Platform</a></li>
+                            <li id="menu-item-312" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-312"><a href="/en/xeta-services/#service02">Development &amp; <br>Platform Operations</a></li>
+                            <li id="menu-item-313" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-313"><a href="/en/xeta-services/#service03">Technical&nbsp;Certification<br>&amp;&nbsp;Compliance&nbsp;Services</a></li>
+                            <li id="menu-item-314" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-314"><a href="/en/xeta-services/#service04">Market &amp; Product Support Services</a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-317" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-317">
+                        <a href="/en/about-us/">ABOUT US</a>
+                    </li>
+                </ul> 
+            </nav>
+            
+            <div id="language_box_wrapper">
+                <span class="language_label">语言/Languages:</span>
+                <div id="language_box">
+                    <select name="lang_choice_1" id="lang_choice_1" class="pll-switcher-select">
+                        <option value="/">简体中文</option>
+                        <option value="/en/" selected>English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 页面主要内容 -->
+    <div class="home_page">
+        <!-- Banner 视频模块 -->
+        <div class="home_page_banner">
+            <div class="home_page_banner_mask"></div>
+            <video class="wow fadeInUp" src="/wp-content/themes/xetabyte_ver2/images/top_movie.mp4" autoplay muted loop playsinline poster="/wp-content/themes/xetabyte_ver2/images/top_movie.jpg"></video>
+            <div class="home_page_banner_content wow fadeInUp home_page_banner_content_image">
+                <img src="/uploads/2026/01/front_page_movie_text.png" alt="Make Mobility Space Smarter" />
+            </div>
+        </div>
+
+        <!-- 核心产品 Line 1 -->
+        <div id="line1" class="home_page_part">
+            <h1 class="part_title wow fadeInUp">XETA PRODUCTS</h1>
+            <span class="part_title_sub wow fadeInUp">Building the Global Automotive Smart Ecosystem.</span>
+            <div class="main_product_slider wow fadeInUp">
+                <div class="main_product_slider_box">
+                    <div class="main_product_slider_item active">
+                        <img src="/uploads/2025/10/main_product_01.jpg" alt="XETA AUTO AI AGENT" />
+                        <div class="main_product_slider_item_inner">
+                            <div class="main_product_slider_item_inner_intro">
+                                <h2>XETA AUTO AI AGENT</h2>
+                                <span>LLM-Powered Interaction for a Personalized Cabin Experience.</span>
+                            </div>
+                            <a class="main_product_slider_item_inner_read_more" href="#line1">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="main_product_slider_item">
+                        <img src="/uploads/2025/08/main_product_02.png" alt="XETA AUTO AI PLATFORM" />
+                        <div class="main_product_slider_item_inner">
+                            <div class="main_product_slider_item_inner_intro">
+                                <h2>XETA AUTO AI PLATFORM</h2>
+                                <span>Unifying Data, Models, and Smart Applications into a Vehicle-Centric Platform.</span>
+                            </div>
+                            <a class="main_product_slider_item_inner_read_more" href="#line1">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="main_product_slider_navigation">
+                    <li class="active"></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 数智化服务 Line 2 -->
+        <div id="line2" class="home_page_part">
+            <h1 class="part_title wow fadeInUp">XETA SERVICES</h1>
+            <span class="part_title_sub wow fadeInUp">Empowering Global OEMs in Global Success</span>
+            <ul class="service_box wow fadeInUp">
+                <li class="service_box_item active">
+                    <div class="service_box_item_intro">
+                        <h2>XETA Global Auto Service Platform</h2>
+                        <span>Full-Process Global Expansion Support for OEMs</span>
+                    </div>
+                    <a href="#line2" class="service_box_item_read_more">Learn more</a>
+                </li>
+                <li class="service_box_item">
+                    <div class="service_box_item_intro">
+                        <h2>Technical Certification &amp; Compliance Services</h2>
+                        <span>Global Regulatory Compliance and Risk Mitigation for OEMs.</span>
+                    </div>
+                    <a href="#line2" class="service_box_item_read_more">Learn more</a>
+                </li>
+                <li class="service_box_item">
+                    <div class="service_box_item_intro">
+                        <h2>Development &amp; Platform Operations</h2>
+                        <span>Development &amp; Operations for Telematics, Data Platforms, and AI Applications.</span>
+                    </div>
+                    <a href="#line2" class="service_box_item_read_more">Learn more</a>
+                </li>
+                <li class="service_box_item">
+                    <div class="service_box_item_intro">
+                        <h2>Market &amp; Product Support Services</h2>
+                        <span>Data-Driven Support for Localization, Insights, and Ecosystem Growth.</span>
+                    </div>
+                    <a href="#line2" class="service_box_item_read_more">Learn more</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 关于我们 Line 3 -->
+        <div id="line3" class="home_page_part">
+            <div class="about_page_header">
+                <div class="about_page_header_inner">
+                    <h1 class="about_page_title wow fadeInUp">ABOUT US</h1>
+                    <span class="about_page_subtitle wow fadeInUp">
+                        XETA Intelligence: A German-Founded, Globally-Positioned Automotive Smart Tech Company.<br> 
+                        We focus on next-generation LLM-based Intelligent Cockpits and their application ecosystems,<br> 
+                        building an international digital intelligence platform to deploy and enhance smart systems globally.<br> <br> <br> 
+                        Our core team comprises experts from the automotive and AI sectors across China, Germany, and the US,<br> 
+                        bringing deep industry and academic connections with a broad international perspective.
+                    </span>
+                    <div class="about_page_header_inner_item_box">
+                        <div class="about_page_header_inner_item_box_item wow fadeInUp">
+                            <h3>MISSION</h3>
+                            <span>Building the Global Automotive Smart Ecosystem. Driving the Next Era of Auto Intelligence.</span>
+                        </div>
+                        <div class="about_page_header_inner_item_box_item wow fadeInUp">
+                            <h3>VISION</h3>
+                            <span>Global Leader in Automotive Intelligence.</span>
+                        </div>
+                        <div class="about_page_header_inner_item_box_item wow fadeInUp">
+                            <h3>VALUES</h3>
+                            <span>Customer First. Professional Integrity. Pioneering Innovation.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 联系我们 Line 4 -->
+        <div id="line4" class="home_page_part_contact_us">
+            <div class="home_page_part_contact_us_inner">
+                <div class="home_page_part_contact_us_inner_box wow fadeInUp">
+                    <div class="home_page_part_contact_us_inner_box_intro">
+                        <h2>CONTACT US</h2>
+                        <span>Driving the Next Era of Auto Intelligence together.</span>
+                    </div>
+                    <form class="home_page_part_contact_us_inner_box_form" id="contactForm">
+                        <div class="form_title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M19.8767 11.2932H4.65373C4.34173 11.2932 4.04414 11.1564 3.83294 10.9164L0.117794 6.65882C-0.146202 6.35642 0.0625948 5.87402 0.456189 5.87402H15.732C16.044 5.87402 16.3416 6.01082 16.548 6.24842L20.2295 10.4676C20.5079 10.7868 20.2871 11.2932 19.8719 11.2932H19.8767Z" fill="black"></path>
+                                <path d="M30.3955 26.4814C30.7938 26.4814 31.1729 26.6642 31.4297 26.9785L47.8789 47.1357C48.1573 47.4789 47.9226 47.9999 47.4883 48H32.2432C31.9051 47.9999 31.5835 47.8442 31.3652 47.5781L18.835 32.2227C18.619 31.9563 18.2969 31.8027 17.9609 31.8027H8.35938C7.93218 31.8027 7.70651 31.2839 7.9873 30.9551L11.5127 26.8389C11.7071 26.611 11.9881 26.4814 12.2832 26.4814H30.3955ZM19.874 36.708C20.2892 36.708 20.5098 37.215 20.2314 37.5342L16.5498 41.7529C16.341 41.9905 16.0434 42.1279 15.7314 42.1279H0.456055C0.0625495 42.1279 -0.146535 41.6452 0.117188 41.3428L3.83496 37.085C4.0437 36.845 4.34143 36.7081 4.65332 36.708H19.874ZM47.4883 0C47.9226 0.000110457 48.1573 0.523494 47.8789 0.864258L31.4297 21.0215C31.1729 21.3358 30.7939 21.5186 30.3955 21.5186H12.2832C11.9881 21.5186 11.7071 21.389 11.5127 21.1611L7.9873 17.0449C7.70651 16.7161 7.93218 16.1973 8.35938 16.1973H17.9609C18.2969 16.1973 18.619 16.0437 18.835 15.7773L31.3652 0.422852C31.5835 0.15416 31.9049 0.000123347 32.2432 0H47.4883Z" fill="black"></path>
+                            </svg>
+                            <span>/WELCOME</span>
+                        </div>
+                        <div class="form_body">
+                            <input class="form_attribute" type="text" name="contact_name" placeholder="Name" required />
+                            <input class="form_attribute" type="tel" name="contact_phone" placeholder="Phone Number" required />
+                            <input class="form_attribute" type="text" name="contact_company" placeholder="Company Name" />
+                            <input class="form_attribute" type="email" name="contact_email" placeholder="Email Address" required />
+                            
+                            <input class="submit" type="submit" value="Submit" />
+                        </div>
+                        <div class="submit_success" id="submitSuccess" style="display: none;">
+                            <h3>Submission Successful</h3>
+                            <span>Thank you for your trust and support. Our team will contact you shortly.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 Footer -->
+    <footer class="footer">
+        <div class="footer_inner">
+            <div class="footer_inner_left">
+                <div class="content">
+                    <h4 class="title">Contact Us</h4>
+                    <p>Email: <a href="mailto:info@xetabyte.ai">info@xetabyte.ai</a></p>
+                </div>
+                <div class="content">
+                    <h4 class="title">Business Cooperation</h4>
+                    <p>Email: <a href="mailto:business@xetabyte.ai">business@xetabyte.ai</a></p>
+                </div>
+            </div>
+            <div class="footer_inner_right">
+                <h4>Follow XETA</h4>
+                <div class="wechat_qrcode"></div>
+                <p>Official WeChat</p>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="footer_bottom_inner">
+                <p class="left">
+                    Copyright © 2025-2026 XETA Intelligence Technology (Shanghai) Co., Ltd. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 客户端交互逻辑 -->
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 0. 语言切换逻辑：选择 "简体中文" 跳转至 "/"
+            const langSelect = document.getElementById('lang_choice_1');
+            if (langSelect) {
+                langSelect.addEventListener('change', (e) => {
+                    window.location.href = e.target.value;
+                });
+            }
+
+            // 1. 移动端菜单切换逻辑
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const topNavi = document.getElementById('topNavi');
+            
+            if (mobileMenuBtn && topNavi) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    topNavi.classList.toggle('mobile-open');
+                    document.body.classList.toggle('menu-open');
+                });
+            }
+
+            // 2. 核心产品区域卡片手风琴 / 鼠标悬停切换逻辑
+            const productItems = document.querySelectorAll('.main_product_slider_item');
+            const productNavs = document.querySelectorAll('.main_product_slider_navigation li');
+            
+            productItems.forEach((item, index) => {
+                item.addEventListener('mouseenter', () => {
+                    productItems.forEach(el => el.classList.remove('active'));
+                    productNavs.forEach(el => el.classList.remove('active'));
+                    item.classList.add('active');
+                    if (productNavs[index]) productNavs[index].classList.add('active');
+                });
+            });
+
+            productNavs.forEach((nav, index) => {
+                nav.addEventListener('click', () => {
+                    productItems.forEach(el => el.classList.remove('active'));
+                    productNavs.forEach(el => el.classList.remove('active'));
+                    if (productItems[index]) productItems[index].classList.add('active');
+                    nav.classList.add('active');
+                });
+            });
+
+            // 3. 数智化服务区域手风琴交互
+            const serviceItems = document.querySelectorAll('.service_box_item');
+            serviceItems.forEach((item) => {
+                item.addEventListener('mouseenter', () => {
+                    serviceItems.forEach(el => el.classList.remove('active'));
+                    item.classList.add('active');
+                });
+            });
+
+            // 4. 表单提交交互演示
+            const contactForm = document.getElementById('contactForm');
+            const submitSuccess = document.getElementById('submitSuccess');
+            if (contactForm && submitSuccess) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    contactForm.querySelector('.form_body').style.display = 'none';
+                    submitSuccess.style.display = 'block';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
