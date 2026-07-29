@@ -1,0 +1,899 @@
+---
+import '../../../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EU Connected Vehicle Compliance & Security Platform - Xetabyte</title>
+    <meta name="description" content="EU Connected Vehicle Compliance & Security Platform by XETA Intelligence. China-EU Dual Perspective · Legal Expertise · Automotive Tech.">
+    
+    <link rel="icon" href="/uploads/2024/09/cropped-logo图形-彩色-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/uploads/2024/09/cropped-logo图形-彩色-180x180.png">
+    
+    <link rel="stylesheet" href="/wp-content/themes/xetabyte_ver2/animate.css?ver=4.1.1">
+
+    <style>
+        .page_wrapper {
+            padding-top: 80px;
+        }
+
+        .product_hero_banner {
+            width: 100%;
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(11, 23, 39, 0.96) 0%, rgba(23, 42, 69, 0.92) 100%), url('/images/products/compliance/minimal_shield.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px 50px;
+            box-sizing: border-box;
+        }
+
+        .product_hero_inner {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .product_hero_inner h1 {
+            font-size: 44px;
+            font-weight: 700;
+            color: #ffffff !important;
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+
+        .product_hero_inner p {
+            font-size: 16.5px;
+            color: rgba(255, 255, 255, 0.9) !important;
+            max-width: 860px;
+            margin: 0 auto;
+            line-height: 1.65;
+            font-weight: 300;
+        }
+
+        .metrics_grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 40px auto 60px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .metric_card {
+            background: #ffffff !important;
+            border-radius: 14px;
+            padding: 32px 24px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #00d084;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .metric_card:hover { transform: translateY(-5px); }
+
+        .metric_value {
+            font-size: 44px;
+            font-weight: 800;
+            color: #00a86b !important;
+            line-height: 1;
+            margin-bottom: 10px;
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        .metric_title {
+            font-size: 18.5px;
+            font-weight: 600;
+            color: #111111 !important;
+            margin-bottom: 6px;
+        }
+
+        .metric_desc {
+            font-size: 13.5px;
+            color: #555555 !important;
+            line-height: 1.5;
+        }
+
+        .section_block {
+            max-width: 1200px;
+            margin: 0 auto 75px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .section_header {
+            text-align: center;
+            margin-bottom: 44px;
+        }
+
+        .section_header h2 {
+            font-size: 35px;
+            font-weight: 600;
+            color: #111111 !important;
+            margin-bottom: 10px;
+        }
+
+        .section_header p {
+            font-size: 15.5px;
+            color: #666666 !important;
+        }
+
+        .unified_integrator_section {
+            background: #0f172a !important;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+            border-radius: 20px;
+            padding: 48px;
+            color: #ffffff !important;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            margin-bottom: 70px;
+            box-sizing: border-box;
+        }
+
+        .integrator_top_header h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00d084 !important;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .integrator_top_header p {
+            font-size: 15.5px;
+            color: #f1f5f9 !important;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .integrator_grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 44px;
+        }
+
+        .int_box {
+            background: rgba(255, 255, 255, 0.06) !important;
+            border-radius: 14px;
+            padding: 26px;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            box-sizing: border-box;
+        }
+
+        .int_box h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #38bdf8 !important;
+            margin-bottom: 14px;
+        }
+
+        .int_box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .int_box ul li {
+            font-size: 14px;
+            color: #e2e8f0 !important;
+            margin-bottom: 10px;
+            padding-left: 18px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .int_box ul li strong {
+            color: #ffffff !important;
+        }
+
+        .int_box ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #38bdf8 !important;
+            font-size: 18px;
+        }
+
+        .integrated_case_divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 40px;
+            margin-top: 10px;
+        }
+
+        .case_flex {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .case_thumb {
+            width: 440px;
+            max-width: 100%;
+            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .case_thumb img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .case_content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .case_badge {
+            display: inline-block;
+            background: rgba(0, 208, 130, 0.25) !important;
+            color: #00d084 !important;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(0, 208, 130, 0.4) !important;
+        }
+
+        .case_content h4 {
+            font-size: 24px;
+            color: #ffffff !important;
+            margin-bottom: 12px;
+            line-height: 1.35;
+            font-weight: 700;
+        }
+
+        .case_content p {
+            font-size: 14.5px;
+            color: #cbd5e1 !important;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .case_content p strong {
+            color: #ffffff !important;
+        }
+
+        .case_quick_stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            background: rgba(0, 0, 0, 0.35) !important;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+            box-sizing: border-box;
+        }
+
+        .stat_box { text-align: center; }
+        .stat_box .num {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00d084 !important;
+            font-family: 'Urbanist', sans-serif;
+        }
+        .stat_box .label {
+            font-size: 12px;
+            color: #94a3b8 !important;
+            margin-top: 2px;
+        }
+
+        .pain_claim_grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .pain_box {
+            background: #fff5f5 !important;
+            border-radius: 14px;
+            padding: 36px;
+            border-left: 5px solid #ff4d4f;
+            box-sizing: border-box;
+        }
+
+        .claim_box {
+            background: #f0f7ff !important;
+            border-radius: 14px;
+            padding: 36px;
+            border-left: 5px solid #00d084;
+            box-sizing: border-box;
+        }
+
+        .box_title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .pain_box .box_title { color: #cf1322 !important; }
+        .claim_box .box_title { color: #00a86b !important; }
+
+        .item_list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .item_list li {
+            font-size: 14.5px;
+            line-height: 1.65;
+            margin-bottom: 12px;
+            color: #333333 !important;
+            position: relative;
+            padding-left: 22px;
+        }
+
+        .pain_box .item_list li::before {
+            content: "✕";
+            position: absolute;
+            left: 0;
+            color: #ff4d4f !important;
+            font-weight: bold;
+        }
+
+        .claim_box .item_list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d084 !important;
+            font-weight: bold;
+        }
+
+        .timeline_container {
+            background: #ffffff !important;
+            border-radius: 16px;
+            padding: 38px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+            box-sizing: border-box;
+        }
+
+        .timeline_grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .timeline_item {
+            background: #f8fafc !important;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #00d084;
+            box-sizing: border-box;
+        }
+
+        .timeline_date {
+            font-size: 13px;
+            font-weight: 700;
+            color: #00a86b !important;
+            margin-bottom: 6px;
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        .timeline_title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #111111 !important;
+            margin-bottom: 6px;
+        }
+
+        .timeline_desc {
+            font-size: 12.5px;
+            color: #666666 !important;
+            line-height: 1.5;
+        }
+
+        .package_grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .package_card {
+            background: #ffffff !important;
+            border-radius: 16px;
+            padding: 34px 26px;
+            border: 2px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .package_card.popular {
+            border-color: #00d084;
+            box-shadow: 0 12px 35px rgba(0, 208, 130, 0.15);
+        }
+
+        .popular_badge {
+            position: absolute;
+            top: 16px;
+            right: -32px;
+            background: #00d084;
+            color: #fff !important;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 36px;
+            transform: rotate(45deg);
+        }
+
+        .pkg_header h3 {
+            font-size: 21px;
+            font-weight: 700;
+            color: #0f172a !important;
+            margin-bottom: 6px;
+        }
+
+        .pkg_sub {
+            font-size: 13px;
+            color: #2a55e5 !important;
+            font-weight: 600;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .pkg_stage {
+            display: inline-block;
+            background: #f1f5f9 !important;
+            color: #475569 !important;
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+        }
+
+        .pkg_list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .pkg_list li {
+            font-size: 13.5px;
+            color: #334155 !important;
+            margin-bottom: 10px;
+            padding-left: 18px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .pkg_list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d084 !important;
+            font-weight: bold;
+        }
+
+        .compare_table_wrapper {
+            overflow-x: auto;
+            background: #ffffff !important;
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eee;
+        }
+
+        .compare_table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            min-width: 650px;
+        }
+
+        .compare_table th, .compare_table td {
+            padding: 18px 22px;
+            border-bottom: 1px solid #eee;
+            font-size: 14.5px;
+        }
+
+        .compare_table th {
+            background: #fafafa !important;
+            font-weight: 600;
+            color: #111111 !important;
+        }
+
+        .compare_table td.our_service {
+            background: #f0fdf4 !important;
+            color: #00a86b !important;
+            font-weight: 600;
+        }
+
+        @media (max-width: 992px) {
+            .integrator_grid { grid-template-columns: 1fr; }
+            .case_flex { flex-direction: column; }
+            .case_thumb { width: 100%; }
+            .metrics_grid { grid-template-columns: 1fr; margin-top: 30px; }
+            .pain_claim_grid { grid-template-columns: 1fr; }
+            .package_grid { grid-template-columns: 1fr; }
+            .timeline_grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .product_hero_inner h1 { font-size: 30px; }
+            .unified_integrator_section { padding: 24px; }
+            .case_quick_stats { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="wp-singular page-template page-template-page-products page-template-page-products-php page wp-custom-logo wp-theme-xetabyte_ver2">
+
+    <!-- Header Navigation -->
+    <header class="top-header">
+        <div class="header-inner">
+            <a href="/en/" class="custom-logo-link" rel="home">
+                <img width="264" height="64" src="/uploads/2025/08/cropped-logo.png" class="custom-logo" alt="Xetabyte" decoding="async" />
+            </a>                
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="top-navi" id="topNavi">        
+                <ul id="menu-new_main_menu_en" class="menu">
+                    <li class="menu-item"><a href="/en/">HOME</a></li>
+                    <li class="menu-item"><a href="/en/xeta-products/">PRODUCTS</a></li>
+                    <li class="menu-item current-menu-item current_page_item"><a href="/en/xeta-services/">SERVICES</a></li>
+                    <li class="menu-item"><a href="/en/about-us/">ABOUT US</a></li>
+                </ul> 
+            </nav>
+            
+            <div id="language_box_wrapper">
+                <span class="language_label">Languages:</span>
+                <div id="language_box">
+                    <select name="lang_choice_1" id="lang_choice_1" class="pll-switcher-select">
+                        <option value="/eu-compliance/">简体中文</option>
+                        <option value="/en/eu-compliance/" selected>English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page_wrapper">
+        <!-- Hero Banner -->
+        <section class="product_hero_banner">
+            <div class="product_hero_inner">
+                <h1>EU Connected Vehicle Compliance &amp; Security Platform</h1>
+                <p>
+                    Helping Chinese OEMs enter Europe with compliant, secure, certifiable, and sustainable operations.<br>
+                    Providing Compliance Architecture + Platform Capabilities + Certification Evidence Orchestration + Managed Security Operations.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3 Metrics Bar -->
+        <div class="metrics_grid">
+            <div class="metric_card">
+                <div class="metric_value">100%</div>
+                <div class="metric_title">Regulatory Coverage</div>
+                <div class="metric_desc">Full coverage of UN R155/R156, GDPR, EU Data Act &amp; EU AI Act</div>
+            </div>
+            <div class="metric_card">
+                <div class="metric_value">0 Fines</div>
+                <div class="metric_title">Proven OEM Track Record</div>
+                <div class="metric_desc">Continuous zero-violation security &amp; compliance platform operations</div>
+            </div>
+            <div class="metric_card">
+                <div class="metric_value">One-Stop</div>
+                <div class="metric_title">Prime Integrator Model</div>
+                <div class="metric_desc">Single point of contact avoiding multi-vendor finger-pointing</div>
+            </div>
+        </div>
+
+        <!-- 🌟 Integrated Prime Integrator & Customer Case Section -->
+        <section class="section_block">
+            <div class="unified_integrator_section">
+                <!-- Top: Positioning -->
+                <div class="integrator_top_header">
+                    <h3>Our Positioning: Prime Integrator for Automotive Compliance &amp; Security in Europe</h3>
+                    <p>
+                        OEMs face a single point of contact for certifiable evidence packages and sustainable local security operations.
+                    </p>
+                </div>
+
+                <div class="integrator_grid">
+                    <div class="int_box">
+                        <h4>In-House Core Capabilities</h4>
+                        <ul>
+                            <li><strong>Sino-German Legal Opinions</strong>: In-house legal team issuing formal opinions.</li>
+                            <li><strong>Data Platform Compliance &amp; Ops</strong>: Proven track record with Chinese OEMs.</li>
+                            <li><strong>Controls &amp; Evidence Platform</strong>: Digital orchestration of OEM audit packages.</li>
+                            <li><strong>Prime Integration</strong>: Unified orchestration across vehicle, cloud, and OTA.</li>
+                        </ul>
+                    </div>
+
+                    <div class="int_box">
+                        <h4>Partner Network Integration</h4>
+                        <ul>
+                            <li><strong>R155 / CSMS</strong>: Technical build and TARA threat analysis.</li>
+                            <li><strong>R156 / OTA</strong>: Underlying platform compliance &amp; update traceability.</li>
+                            <li><strong>VSOC Operations</strong>: SOC / IDS / SIEM security monitoring &amp; response.</li>
+                            <li><strong>Type-Approval Bodies</strong>: Direct channel with TÜV, DEKRA, VCA, KBA, TISAX.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bottom: Integrated Case Study -->
+                <div class="integrated_case_divider">
+                    <div class="case_flex">
+                        <div class="case_thumb">
+                            <img src="/images/products/compliance/minimal_dashboard.jpg" alt="Managed VSOC Fleet Dashboard" />
+                        </div>
+                        <div class="case_content">
+                            <span class="case_badge">🛡️ Featured OEM Customer Track Record</span>
+                            <h4>Chinese OEM EU Data Platform Remediation &amp; Managed Operations</h4>
+                            <p>
+                                Assisted a leading Chinese OEM in executing EU data platform remediation, establishing cross-border data transfer (SCC+TIA) and 24/7 Managed VSOC operations.<br>
+                                <strong>Completed full remediation and managed ops, maintaining zero compliance violations for European fleet!</strong>
+                            </p>
+                            <div class="case_quick_stats">
+                                <div class="stat_box">
+                                    <div class="num">100%</div>
+                                    <div class="label">Remediation Closed</div>
+                                </div>
+                                <div class="stat_box">
+                                    <div class="num">7×24h</div>
+                                    <div class="label">VSOC Security Ops</div>
+                                </div>
+                                <div class="stat_box">
+                                    <div class="num">0 Fines</div>
+                                    <div class="label">Violation Record</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🌟 Pain Points vs Solutions -->
+        <section class="section_block">
+            <div class="section_header">
+                <h2>Reshaping Connected Vehicle Compliance Delivery</h2>
+                <p>Strict regulations require end-to-end engineering and legal integration beyond static PDF reports</p>
+            </div>
+
+            <div class="pain_claim_grid">
+                <div class="pain_box">
+                    <div class="box_title">
+                        <span>Real OEM Pain Points</span>
+                    </div>
+                    <ul class="item_list">
+                        <li><strong>Non-transferable Data</strong>: Domestic telematics logic triggers severe GDPR &amp; ePrivacy risks in Europe.</li>
+                        <li><strong>Blocked HQ Cross-Border Access</strong>: Remote data access from China HQ involves complex TIA regulations.</li>
+                        <li><strong>Weak OTA Evidence Chains</strong>: Strong OTA tech capability lacks traceable evidence required by EU type-approval.</li>
+                        <li><strong>AI Cockpit Regulatory Risks</strong>: In-cabin LLMs and DMS face high-risk EU AI Act audit scrutiny.</li>
+                        <li><strong>Fragmented Supplier Silos</strong>: Vehicle, Cloud, App, and OTA belong to separate vendors without unified orchestration.</li>
+                    </ul>
+                </div>
+
+                <div class="claim_box">
+                    <div class="box_title">
+                        <span>XETA's Core Solution Pillars</span>
+                    </div>
+                    <ul class="item_list">
+                        <li><strong>Sino-German Legal Opinions</strong>: In-house legal team issuing formal, actionable legal opinions.</li>
+                        <li><strong>Digital Evidence Orchestration</strong>: Automated control mapping to generate TÜV/DEKRA audit packages.</li>
+                        <li><strong>Managed VSOC Operations</strong>: 7×24 vehicle security operations center subscription model.</li>
+                        <li><strong>Prime Integrator Model</strong>: Single point of contact for end-to-end compliance &amp; certification.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regulatory Timeline -->
+        <section class="section_block">
+            <div class="section_header">
+                <h2>Regulatory Timeline (2024–2027 Key Milestones)</h2>
+                <p>Mandatory regulations enforcing strict compliance deadlines</p>
+            </div>
+
+            <div class="timeline_container">
+                <div class="timeline_grid">
+                    <div class="timeline_item">
+                        <div class="timeline_date">Mandatory July 2024</div>
+                        <div class="timeline_title">UN R155 / R156</div>
+                        <div class="timeline_desc">Mandatory for all new vehicles. Without CSMS/SUMS evidence, vehicles cannot receive EU type-approval.</div>
+                    </div>
+                    <div class="timeline_item">
+                        <div class="timeline_date">Mandatory July 2024</div>
+                        <div class="timeline_title">GSR2 Regulation</div>
+                        <div class="timeline_desc">Mandatory eCall/EDR/DMS equipment triggering new personal data processing coupled with GDPR.</div>
+                    </div>
+                    <div class="timeline_item">
+                        <div class="timeline_date">Applicable Sept 2025</div>
+                        <div class="timeline_title">EU Data Act</div>
+                        <div class="timeline_desc">Mandatory connected vehicle data access and sharing mechanisms driving OEM data governance.</div>
+                    </div>
+                    <div class="timeline_item">
+                        <div class="timeline_date">Enforced August 2026</div>
+                        <div class="timeline_title">EU AI Act</div>
+                        <div class="timeline_desc">High-risk AI obligations for smart cockpits and LLMs require early risk assessment preparation.</div>
+                    </div>
+                    <div class="timeline_item">
+                        <div class="timeline_date">Enforced Dec 2027</div>
+                        <div class="timeline_title">CRA / NIS2</div>
+                        <div class="timeline_desc">Digital product vulnerability management, 24h incident reporting, and operational security requirements.</div>
+                    </div>
+                    <div class="timeline_item">
+                        <div class="timeline_date">Continuous Enforcement</div>
+                        <div class="timeline_title">GDPR Privacy</div>
+                        <div class="timeline_desc">Fines up to 4% of global turnover. Cross-border access by China HQ is a high-risk area.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🌟 Solutions & Commercial Packages -->
+        <section class="section_block">
+            <div class="section_header">
+                <h2>Three Packages Covering Full Product Lifecycle</h2>
+                <p>Initial Assessment → Certification Evidence Build → Long-term Managed Operations</p>
+            </div>
+
+            <div class="package_grid">
+                <div class="package_card">
+                    <div class="pkg_header">
+                        <h3>P1 Compliance Assessment</h3>
+                        <span class="pkg_sub">EU Compliance Readiness</span>
+                        <span class="pkg_stage">📅 Pre-Expansion · Fixed Fee</span>
+                    </div>
+                    <ul class="pkg_list">
+                        <li>Regulatory applicability analysis</li>
+                        <li>Vehicle data flow mapping</li>
+                        <li>Gap &amp; risk heatmap output</li>
+                        <li>Remediation roadmap &amp; evidence list</li>
+                    </ul>
+                </div>
+
+                <div class="package_card popular">
+                    <div class="popular_badge">Recommended</div>
+                    <div class="pkg_header">
+                        <h3>P2 Certification Evidence Build</h3>
+                        <span class="pkg_sub">Compliance &amp; Certification Build</span>
+                        <span class="pkg_stage">🚗 Dev to SOP · Project + Subscription</span>
+                    </div>
+                    <ul class="pkg_list">
+                        <li>R155/R156 type-approval evidence packages</li>
+                        <li>Vehicle data compliance (GDPR / Data Act)</li>
+                        <li>Smart cockpit AI compliance &amp; registry</li>
+                        <li>Control mapping &amp; audit trail orchestration</li>
+                    </ul>
+                </div>
+
+                <div class="package_card">
+                    <div class="pkg_header">
+                        <h3>P3 Managed Operations</h3>
+                        <span class="pkg_sub">Managed Compliance &amp; Security Ops</span>
+                        <span class="pkg_stage">🛡️ Post-Launch · Annual Retainer</span>
+                    </div>
+                    <ul class="pkg_list">
+                        <li>Managed VSOC vehicle security operations</li>
+                        <li>Compliance Ops (DSR / Cross-border audit)</li>
+                        <li>EU regulatory tracking &amp; local response</li>
+                        <li>Monthly OEM security &amp; compliance reports</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🌟 Why Choose Us Matrix -->
+        <section class="section_block">
+            <div class="section_header">
+                <h2>Why Choose XETA</h2>
+                <p>Traditional Point Consulting / Law Firms vs. XETA Prime Integration Service</p>
+            </div>
+
+            <div class="compare_table_wrapper">
+                <table class="compare_table">
+                    <thead>
+                        <tr>
+                            <th>Dimension</th>
+                            <th>Traditional Consulting / Law Firms</th>
+                            <th class="our_service">XETA Prime Integration Service</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Service Model</strong></td>
+                            <td>Isolated PDF reports or high-level legal opinions</td>
+                            <td class="our_service">Prime Integrator: Legal + Tech + Audit Evidence + VSOC Ops</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Deliverables</strong></td>
+                            <td>Static text reports lacking technical implementation</td>
+                            <td class="our_service">Auditable evidence packages, platform remediation &amp; 24/7 ops</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tech Expertise</strong></td>
+                            <td>Lacking deep vehicle software and cloud architecture depth</td>
+                            <td class="our_service">15+ years automotive software engineering depth across EU &amp; China</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Supplier Coordination</strong></td>
+                            <td>OEM must independently coordinate vehicle, cloud &amp; OTA vendors</td>
+                            <td class="our_service">Orchestrates vehicle, cloud, OTA, VSOC and certification bodies</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Legal Authority</strong></td>
+                            <td>Outsourced third-party law firms causing fragmented liability</td>
+                            <td class="our_service">In-house Sino-German legal team issuing formal legal opinions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Long-term Value</strong></td>
+                            <td>One-off project hand-over without ongoing support</td>
+                            <td class="our_service">Managed VSOC subscription protecting long-term compliance</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer_inner">
+            <div class="footer_inner_left">
+                <div class="content">
+                    <h4 class="title">CONTACT US</h4>
+                    <p>Email: <a href="mailto:info@xetabyte.ai">info@xetabyte.ai</a></p>
+                </div>
+                <div class="content">
+                    <h4 class="title">BUSINESS COOPERATION</h4>
+                    <p>Email: <a href="mailto:business@xetabyte.ai">business@xetabyte.ai</a></p>
+                </div>
+            </div>
+            <div class="footer_inner_right">
+                <h4>FOLLOW XETA</h4>
+                <div class="wechat_qrcode"></div>
+                <p>Official WeChat</p>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="footer_bottom_inner">
+                <p class="left">Copyright © 2025-2026 XETA Intelligence Technology (Shanghai) Co., Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langSelect = document.getElementById('lang_choice_1');
+            if (langSelect) {
+                langSelect.addEventListener('change', (e) => {
+                    window.location.href = e.target.value;
+                });
+            }
+
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const topNavi = document.getElementById('topNavi');
+            if (mobileMenuBtn && topNavi) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    topNavi.classList.toggle('mobile-open');
+                    document.body.classList.toggle('menu-open');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

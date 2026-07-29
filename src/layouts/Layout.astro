@@ -1,33 +1,51 @@
 ---
 import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
-	title?: string;
-	description?: string;
+  title?: string;
+  description?: string;
+  lang?: 'zh' | 'en';
+  currentPath?: string;
 }
 
 const { 
-	title = "XETA | Next-Gen AI Architecture & Systems", 
-	description = "XETA - Empowering intelligent digital transformation through cutting-edge AI architecture and high-performance systems." 
+  title = "字特智能科技 - XETA Intelligence", 
+  description = "字特智能科技（上海）有限公司官方网站。深耕汽车座舱软件与欧洲车联网出海合规，全栈 AI 工具链保障高质量交付。",
+  lang = 'zh',
+  currentPath = '/'
 } = Astro.props;
+
+const isEn = lang === 'en';
 ---
 
 <!doctype html>
-<html lang="zh-CN">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		
-		<!-- SEO Meta Tags -->
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:type" content="website" />
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang={isEn ? "en-US" : "zh-CN"}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="/uploads/2024/09/cropped-logo图形-彩色-32x32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/uploads/2024/09/cropped-logo图形-彩色-180x180.png" />
+    <link rel="stylesheet" href="/wp-content/themes/xetabyte_ver2/animate.css?ver=4.1.1" />
+  </head>
+  <body class={`wp-singular page-template page-template-page-products page-template-page-products-php page wp-custom-logo wp-theme-xetabyte_ver2`}>
+    <!-- 统一 Header 导航栏 -->
+    <Header currentPath={currentPath} lang={lang} />
+
+    <!-- 主页面内容区域 -->
+    <main class="inner_page" style="padding-top: 64px;">
+      <slot />
+    </main>
+
+    <!-- 统一 Footer 页脚栏 -->
+    <Footer lang={lang} />
+  </body>
 </html>

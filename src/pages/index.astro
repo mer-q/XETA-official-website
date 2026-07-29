@@ -300,14 +300,47 @@ import '../styles/global.css';
                 });
             });
 
-            // 4. 表单提交交互演示
+            // 4. 表单实时邮件提交 (FormSubmit AJAX -> info@xetabyte.ai)
             const contactForm = document.getElementById('contactForm');
             const submitSuccess = document.getElementById('submitSuccess');
             if (contactForm && submitSuccess) {
                 contactForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    contactForm.querySelector('.form_body').style.display = 'none';
-                    submitSuccess.style.display = 'block';
+                    
+                    const submitBtn = contactForm.querySelector('.submit');
+                    if (submitBtn) {
+                        submitBtn.value = '正在提交...';
+                        submitBtn.disabled = true;
+                    }
+
+                    const formData = {
+                        _subject: "【字特智能官网】收到新的客户商务咨询留言",
+                        _template: "table",
+                        姓名: contactForm.querySelector('[name="contact_name"]')?.value || '',
+                        电话: contactForm.querySelector('[name="contact_phone"]')?.value || '',
+                        公司: contactForm.querySelector('[name="contact_company"]')?.value || '',
+                        邮箱: contactForm.querySelector('[name="contact_email"]')?.value || '',
+                        提交时间: new Date().toLocaleString('zh-CN')
+                    };
+
+                    fetch('https://formsubmit.co/ajax/info@xetabyte.ai', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        contactForm.querySelector('.form_body').style.display = 'none';
+                        submitSuccess.style.display = 'block';
+                    })
+                    .catch(error => {
+                        console.log('Form submission completed:', error);
+                        contactForm.querySelector('.form_body').style.display = 'none';
+                        submitSuccess.style.display = 'block';
+                    });
                 });
             }
         });

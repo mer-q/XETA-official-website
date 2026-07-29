@@ -1,0 +1,909 @@
+---
+import '../../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欧洲车联网合规与安全运营一站式平台 - 字特智能</title>
+    <meta name="description" content="字特智能 - 欧洲车联网合规与安全运营一站式平台方案。帮助中国车企以合规、安全、可认证、可持续运营的方式顺利进入欧洲。">
+    
+    <link rel="icon" href="/uploads/2024/09/cropped-logo图形-彩色-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/uploads/2024/09/cropped-logo图形-彩色-180x180.png">
+    
+    <link rel="stylesheet" href="/wp-content/themes/xetabyte_ver2/animate.css?ver=4.1.1">
+
+    <style>
+        /* 顶部 Header 占位防重叠 */
+        .page_wrapper {
+            padding-top: 80px;
+        }
+
+        .product_hero_banner {
+            width: 100%;
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(11, 23, 39, 0.96) 0%, rgba(23, 42, 69, 0.92) 100%), url('/images/products/compliance/minimal_shield.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px 50px;
+            box-sizing: border-box;
+        }
+
+        .product_hero_inner {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .product_hero_inner h1 {
+            font-size: 44px;
+            font-weight: 700;
+            color: #ffffff !important;
+            margin-bottom: 18px;
+            line-height: 1.25;
+            letter-spacing: 1px;
+        }
+
+        .product_hero_inner p {
+            font-size: 16.5px;
+            color: rgba(255, 255, 255, 0.9) !important;
+            max-width: 860px;
+            margin: 0 auto;
+            line-height: 1.65;
+            font-weight: 300;
+        }
+
+        /* 核心指标 Pillar Bar */
+        .metrics_grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 40px auto 60px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .metric_card {
+            background: #ffffff !important;
+            border-radius: 14px;
+            padding: 32px 24px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #00d084;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .metric_card:hover { transform: translateY(-5px); }
+
+        .metric_value {
+            font-size: 44px;
+            font-weight: 800;
+            color: #00a86b !important;
+            line-height: 1;
+            margin-bottom: 10px;
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        .metric_title {
+            font-size: 18.5px;
+            font-weight: 600;
+            color: #111111 !important;
+            margin-bottom: 6px;
+        }
+
+        .metric_desc {
+            font-size: 13.5px;
+            color: #555555 !important;
+            line-height: 1.5;
+        }
+
+        .section_block {
+            max-width: 1200px;
+            margin: 0 auto 75px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .section_header {
+            text-align: center;
+            margin-bottom: 44px;
+        }
+
+        .section_header h2 {
+            font-size: 35px;
+            font-weight: 600;
+            color: #111111 !important;
+            margin-bottom: 10px;
+        }
+
+        .section_header p {
+            font-size: 15.5px;
+            color: #666666 !important;
+        }
+
+        /* 🌟 核心定位与真实落地案例（二合一融合大卡片，强制高对比深色调） */
+        .unified_integrator_section {
+            background: #0f172a !important;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+            border-radius: 20px;
+            padding: 48px;
+            color: #ffffff !important;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            margin-bottom: 70px;
+            box-sizing: border-box;
+        }
+
+        .integrator_top_header h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00d084 !important;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .integrator_top_header p {
+            font-size: 15.5px;
+            color: #f1f5f9 !important;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .integrator_grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 44px;
+        }
+
+        .int_box {
+            background: rgba(255, 255, 255, 0.06) !important;
+            border-radius: 14px;
+            padding: 26px;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            box-sizing: border-box;
+        }
+
+        .int_box h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #38bdf8 !important;
+            margin-bottom: 14px;
+        }
+
+        .int_box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .int_box ul li {
+            font-size: 14px;
+            color: #e2e8f0 !important;
+            margin-bottom: 10px;
+            padding-left: 18px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .int_box ul li strong {
+            color: #ffffff !important;
+        }
+
+        .int_box ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #38bdf8 !important;
+            font-size: 18px;
+        }
+
+        /* 融合的案例部分 */
+        .integrated_case_divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 40px;
+            margin-top: 10px;
+        }
+
+        .case_flex {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .case_thumb {
+            width: 440px;
+            max-width: 100%;
+            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .case_thumb img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .case_content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .case_badge {
+            display: inline-block;
+            background: rgba(0, 208, 130, 0.25) !important;
+            color: #00d084 !important;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(0, 208, 130, 0.4) !important;
+        }
+
+        .case_content h4 {
+            font-size: 24px;
+            color: #ffffff !important;
+            margin-bottom: 12px;
+            line-height: 1.35;
+            font-weight: 700;
+        }
+
+        .case_content p {
+            font-size: 14.5px;
+            color: #cbd5e1 !important;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .case_content p strong {
+            color: #ffffff !important;
+        }
+
+        .case_quick_stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            background: rgba(0, 0, 0, 0.35) !important;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+            box-sizing: border-box;
+        }
+
+        .stat_box { text-align: center; }
+        .stat_box .num {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00d084 !important;
+            font-family: 'Urbanist', sans-serif;
+        }
+        .stat_box .label {
+            font-size: 12px;
+            color: #94a3b8 !important;
+            margin-top: 2px;
+        }
+
+        /* 痛点 vs 核心主张 */
+        .pain_claim_grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .pain_box {
+            background: #fff5f5 !important;
+            border-radius: 14px;
+            padding: 36px;
+            border-left: 5px solid #ff4d4f;
+            box-sizing: border-box;
+        }
+
+        .claim_box {
+            background: #f0f7ff !important;
+            border-radius: 14px;
+            padding: 36px;
+            border-left: 5px solid #00d084;
+            box-sizing: border-box;
+        }
+
+        .box_title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .pain_box .box_title { color: #cf1322 !important; }
+        .claim_box .box_title { color: #00a86b !important; }
+
+        .item_list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .item_list li {
+            font-size: 14.5px;
+            line-height: 1.65;
+            margin-bottom: 12px;
+            color: #333333 !important;
+            position: relative;
+            padding-left: 22px;
+        }
+
+        .pain_box .item_list li::before {
+            content: "✕";
+            position: absolute;
+            left: 0;
+            color: #ff4d4f !important;
+            font-weight: bold;
+        }
+
+        .claim_box .item_list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d084 !important;
+            font-weight: bold;
+        }
+
+        /* 监管时钟时间轴 */
+        .timeline_container {
+            background: #ffffff !important;
+            border-radius: 16px;
+            padding: 38px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+            box-sizing: border-box;
+        }
+
+        .timeline_grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .timeline_item {
+            background: #f8fafc !important;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #00d084;
+            box-sizing: border-box;
+        }
+
+        .timeline_date {
+            font-size: 13px;
+            font-weight: 700;
+            color: #00a86b !important;
+            margin-bottom: 6px;
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        .timeline_title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #111111 !important;
+            margin-bottom: 6px;
+        }
+
+        .timeline_desc {
+            font-size: 12.5px;
+            color: #666666 !important;
+            line-height: 1.5;
+        }
+
+        /* 3 大商业套餐 */
+        .package_grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .package_card {
+            background: #ffffff !important;
+            border-radius: 16px;
+            padding: 34px 26px;
+            border: 2px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .package_card.popular {
+            border-color: #00d084;
+            box-shadow: 0 12px 35px rgba(0, 208, 130, 0.15);
+        }
+
+        .popular_badge {
+            position: absolute;
+            top: 16px;
+            right: -32px;
+            background: #00d084;
+            color: #fff !important;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 36px;
+            transform: rotate(45deg);
+        }
+
+        .pkg_header h3 {
+            font-size: 21px;
+            font-weight: 700;
+            color: #0f172a !important;
+            margin-bottom: 6px;
+        }
+
+        .pkg_sub {
+            font-size: 13px;
+            color: #2a55e5 !important;
+            font-weight: 600;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .pkg_stage {
+            display: inline-block;
+            background: #f1f5f9 !important;
+            color: #475569 !important;
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+        }
+
+        .pkg_list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .pkg_list li {
+            font-size: 13.5px;
+            color: #334155 !important;
+            margin-bottom: 10px;
+            padding-left: 18px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .pkg_list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d084 !important;
+            font-weight: bold;
+        }
+
+        /* 为什么选择我们：对比表格 Matrix */
+        .compare_table_wrapper {
+            overflow-x: auto;
+            background: #ffffff !important;
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eee;
+        }
+
+        .compare_table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            min-width: 650px;
+        }
+
+        .compare_table th, .compare_table td {
+            padding: 18px 22px;
+            border-bottom: 1px solid #eee;
+            font-size: 14.5px;
+        }
+
+        .compare_table th {
+            background: #fafafa !important;
+            font-weight: 600;
+            color: #111111 !important;
+        }
+
+        .compare_table td.our_service {
+            background: #f0fdf4 !important;
+            color: #00a86b !important;
+            font-weight: 600;
+        }
+
+        @media (max-width: 992px) {
+            .integrator_grid { grid-template-columns: 1fr; }
+            .case_flex { flex-direction: column; }
+            .case_thumb { width: 100%; }
+            .metrics_grid { grid-template-columns: 1fr; margin-top: 30px; }
+            .pain_claim_grid { grid-template-columns: 1fr; }
+            .package_grid { grid-template-columns: 1fr; }
+            .timeline_grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .product_hero_inner h1 { font-size: 30px; }
+            .unified_integrator_section { padding: 24px; }
+            .case_quick_stats { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="wp-singular page-template page-template-page-products page-template-page-products-php page wp-custom-logo wp-theme-xetabyte_ver2">
+
+    <!-- 顶部 Header 导航栏 -->
+    <header class="top-header">
+        <div class="header-inner">
+            <a href="/" class="custom-logo-link" rel="home">
+                <img width="264" height="64" src="/uploads/2025/08/cropped-logo.png" class="custom-logo" alt="字特智能" decoding="async" />
+            </a>                
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="切换菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="top-navi" id="topNavi">        
+                <ul id="menu-new_main_menu" class="menu">
+                    <li class="menu-item"><a href="/">首页</a></li>
+                    <li class="menu-item"><a href="/核心产品/">核心产品</a></li>
+                    <li class="menu-item current-menu-item current_page_item"><a href="/数智化服务/">数智化服务</a></li>
+                    <li class="menu-item"><a href="/资讯中心/">资讯中心</a></li>
+                    <li class="menu-item"><a href="/关于我们/">关于我们</a></li>
+                </ul> 
+            </nav>
+            
+            <div id="language_box_wrapper">
+                <span class="language_label">语言/Languages:</span>
+                <div id="language_box">
+                    <select name="lang_choice_1" id="lang_choice_1" class="pll-switcher-select">
+                        <option value="/eu-compliance/" selected>简体中文</option>
+                        <option value="/en/eu-compliance/">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page_wrapper">
+        <!-- Hero 头部 Banner -->
+        <section class="product_hero_banner">
+            <div class="product_hero_inner">
+                <h1>欧洲车联网合规与安全运营一站式平台</h1>
+                <p>
+                    帮中国车企以合规、安全、可认证、可持续运营的方式顺利进入欧洲市场。<br>
+                    拒绝单纯“交 PDF 报告”的普通咨询，提供合规体系搭建 + 平台能力建设 + 认证证据编排 + 安全运营托管的全闭环能力。
+                </p>
+            </div>
+        </section>
+
+        <!-- 3 大核心量化指标 Pillar Bar -->
+        <div class="metrics_grid">
+            <div class="metric_card">
+                <div class="metric_value">100%</div>
+                <div class="metric_title">合规法规覆盖</div>
+                <div class="metric_desc">全覆盖 UN R155/R156、GDPR、EU Data Act 及 EU AI Act 规制</div>
+            </div>
+            <div class="metric_card">
+                <div class="metric_value">0 违规</div>
+                <div class="metric_title">主机厂交付记录</div>
+                <div class="metric_desc">数据平台合规整改与车联网平台托管持续零违规安全运营</div>
+            </div>
+            <div class="metric_card">
+                <div class="metric_value">1 站式</div>
+                <div class="metric_title">总集成商交付</div>
+                <div class="metric_desc">减少 OEM 跨供应商沟通熵增与责任甩锅，直接提供可审计证据包</div>
+            </div>
+        </div>
+
+        <!-- 🌟【核心定位 ＋ 真实客户案例一体化 Banner】：放在最前面，高对比深色调 -->
+        <section class="section_block">
+            <div class="unified_integrator_section">
+                <!-- 上半部分：合规总集成商核心定位 -->
+                <div class="integrator_top_header">
+                    <h3>我们的定位：中国车企出海欧洲的“车联网合规与安全运营总集成商”</h3>
+                    <p>
+                        客户只需面对字特智能一家，即可拿到全套型式认证可用的证据链，并获得长期可持续的本地化安全运营服务。
+                    </p>
+                </div>
+
+                <div class="integrator_grid">
+                    <div class="int_box">
+                        <h4>自有核心能力（已验证落地）</h4>
+                        <ul>
+                            <li><strong>中德双边法律意见</strong>：自有中德律师团队出具正式法律意见。</li>
+                            <li><strong>数据平台合规整改与运维</strong>：已有真实主机厂交付闭环。</li>
+                            <li><strong>合规控制项库与证据管理</strong>：数字化管理 OEM 审计证据包。</li>
+                            <li><strong>总集成编排</strong>：统一调度车端、云、OTA 与认证资源。</li>
+                        </ul>
+                    </div>
+
+                    <div class="int_box">
+                        <h4>合作伙伴深度交付（我方总集成）</h4>
+                        <ul>
+                            <li><strong>R155 / CSMS</strong>：技术构建与 TARA 威胁分析。</li>
+                            <li><strong>R156 / OTA</strong>：底层平台合规与更新追溯。</li>
+                            <li><strong>VSOC 运营</strong>：SOC / IDS / SIEM 安全监测与事件响应。</li>
+                            <li><strong>认证通道对接</strong>：TÜV、DEKRA、VCA、KBA、TISAX。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 下半部分：一体化的真实客户落地实绩案例 -->
+                <div class="integrated_case_divider">
+                    <div class="case_flex">
+                        <div class="case_thumb">
+                            <img src="/images/products/compliance/minimal_dashboard.jpg" alt="Managed VSOC 车联网安全运营仪表盘" />
+                        </div>
+                        <div class="case_content">
+                            <span class="case_badge">🛡️ 真实主机厂标杆实绩</span>
+                            <h4>某中国 OEM 欧盟数据平台合规整改与长效运营托管</h4>
+                            <p>
+                                协助国内头部车企打通欧盟数据平台合规整改，完成车端数据脱敏、云端审计轨迹与中欧跨境传输（SCC+TIA）建设。<br>
+                                <strong>已打通整改与托管闭环，Managed VSOC 7×24 小时护航出海车辆合规与安全运转！</strong>
+                            </p>
+                            <div class="case_quick_stats">
+                                <div class="stat_box">
+                                    <div class="num">100%</div>
+                                    <div class="label">整改托管闭环</div>
+                                </div>
+                                <div class="stat_box">
+                                    <div class="num">7×24h</div>
+                                    <div class="label">VSOC 安全运营</div>
+                                </div>
+                                <div class="stat_box">
+                                    <div class="num">0 违规</div>
+                                    <div class="label">监管处罚记录</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🌟【重点内容 2】：痛点与解决（红蓝对比矩阵） -->
+        <section class="section_block">
+            <div class="section_header">
+                <h2>重塑车联网出海合规交付模式</h2>
+                <p>法规日趋严苛，传统单点咨询或传统律所已无法满足全链路技术合规要求</p>
+            </div>
+
+            <div class="pain_claim_grid">
+                <div class="pain_box">
+                    <div class="box_title">
+                        <span>客户面临的真实痛点</span>
+                    </div>
+                    <ul class="item_list">
+                        <li><strong>数据搬不过去</strong>：国内逻辑无法照搬，位置与驾驶行为极易触发 GDPR 与 ePrivacy 风险。</li>
+                        <li><strong>总部跨境访问受阻</strong>：中国总部远程访问欧洲数据涉复杂跨境传输规制与 TIA 评估。</li>
+                        <li><strong>OTA强但证据链弱</strong>：车企具备成熟 OTA 技术，但缺乏欧洲认可的全生命周期追溯证据。</li>
+                        <li><strong>AI座舱合规难</strong>：智能语音与大模型面临 EU AI Act 高风险合规与算法透明度审查。</li>
+                        <li><strong>供应商各自为政</strong>：车端、云、App、OTA 分属不同供应商，缺乏统一的合规证据编排。</li>
+                    </ul>
+                </div>
+
+                <div class="claim_box">
+                    <div class="box_title">
+                        <span>字特智能的核心方案主张</span>
+                    </div>
+                    <ul class="item_list">
+                        <li><strong>中德双边法律保障</strong>：自有中德律师团队出具正式法律意见，消除违规风险。</li>
+                        <li><strong>数字化证据编排</strong>：自研控制项平台，一键生成 TÜV/DEKRA 可用的型式认证证据包。</li>
+                        <li><strong>车联网托管运营</strong>：Managed VSOC 7×24 小时长效运营，按年订阅护航出海。</li>
+                        <li><strong>Prime Integrator 总集成</strong>：OEM 只需面对字特一家，搞定全链条合规与认证。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🌟【重点内容 3】：监管时钟逼近 -->
+        <section class="section_block">
+            <div class="section_header">
+                <h2>监管时钟逼近（2024–2027 法规节点）</h2>
+                <p>法规已强制或临近生效，车企必须提前完成合规建设</p>
+            </div>
+
+            <div class="timeline_container">
+                <div class="timeline_grid">
+                    <div class="timeline_item">
+                        <div class="timeline_date">2024-07 强制生效</div>
+                        <div class="timeline_title">UN R155 / R156</div>
+                        <div class="timeline_desc">全部新车强制。无 CSMS/SUMS 证据，新车无法在欧盟获型式认证与上牌。</div>
+                    </div>
+                    <div class="timeline_item">
+                        <div class="timeline_date">2024-07 强制装备</div>
+                        <div class="timeline_title">GSR2 法规指令</div>
+                        <div class="timeline_desc">强制装备 eCall/EDR/DMS。触发新个人数据处理，与 GDPR 深度耦合。</div>
+                    </div>
+                    <div class="timeline_item">
+                        <div class="timeline_date">2025-09-12 适用</div>
+                        <div class="timeline_title">EU Data Act</div>
+                        <div class="timeline_desc">智能联网车数据访问/共享机制——车企数据合规治理的最强驱动力。</div>
+                    </div>
+                    <div class="timeline_item">
+                        <div class="timeline_date">2026-08 准备到位</div>
+                        <div class="timeline_title">EU AI Act</div>
+                        <div class="timeline_desc">智能座舱与大模型高风险义务实施，需提前完成高风险AI系统评估准备。</div>
+                    </div>
+                    <div class="timeline_item">
+                        <div class="timeline_date">2027-12 主要义务</div>
+                        <div class="timeline_title">CRA / NIS2</div>
+                        <div class="timeline_desc">数字产品漏洞管理、安全事件 24h 报告与运营安全，需提前布局。</div>
+                    </div>
+                    <div class="timeline_item">
+                        <div class="timeline_date">持续适用</div>
+                        <div class="timeline_title">GDPR 隐私合规</div>
+                        <div class="timeline_desc">罚款上限达全球营收 4%，中国总部跨境访问欧洲车辆数据属极高危项。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🌟【重点内容 4】：三大商业套餐方案 -->
+        <section class="section_block">
+            <div class="section_header">
+                <h2>三个套餐，覆盖客户全生命周期方案</h2>
+                <p>一次性合规评估 → 认证证据构建 → 上线后长期运营托管</p>
+            </div>
+
+            <div class="package_grid">
+                <div class="package_card">
+                    <div class="pkg_header">
+                        <h3>P1 合规体检与准入评估</h3>
+                        <span class="pkg_sub">EU Compliance Readiness</span>
+                        <span class="pkg_stage">📅 出海前 · 固定项目费</span>
+                    </div>
+                    <ul class="pkg_list">
+                        <li>欧洲多法规适用性精准判断</li>
+                        <li>车联网全链路数据流梳理</li>
+                        <li>Gap 缺口与风险热力图输出</li>
+                        <li>整改路线图与合规证据清单</li>
+                    </ul>
+                </div>
+
+                <div class="package_card popular">
+                    <div class="popular_badge">核心推荐</div>
+                    <div class="pkg_header">
+                        <h3>P2 合规与认证证据构建</h3>
+                        <span class="pkg_sub">Compliance &amp; Certification Build</span>
+                        <span class="pkg_stage">🚗 开发到量产 · 项目费+订阅</span>
+                    </div>
+                    <ul class="pkg_list">
+                        <li>R155/R156 量产型式认证证据包</li>
+                        <li>车辆数据合规（GDPR / Data Act）</li>
+                        <li>智能座舱 AI 合规与台账建立</li>
+                        <li>控制项映射与审计轨迹编排</li>
+                    </ul>
+                </div>
+
+                <div class="package_card">
+                    <div class="pkg_header">
+                        <h3>P3 本地合规与安全运营托管</h3>
+                        <span class="pkg_sub">Managed Compliance &amp; Security Ops</span>
+                        <span class="pkg_stage">🛡️ 上线后 · 年费 Retainer</span>
+                    </div>
+                    <ul class="pkg_list">
+                        <li>Managed VSOC 汽车安全运营托管</li>
+                        <li>合规运营运维（DSR行使/跨境审计）</li>
+                        <li>欧洲法规变更跟踪与本地响应</li>
+                        <li>OEM 月度安全合规报告出具</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🌟【重点内容 5】：为什么选择我们（对比表格 Matrix） -->
+        <section class="section_block">
+            <div class="section_header">
+                <h2>为什么选择我们</h2>
+                <p>传统单点咨询 / 律所 vs 字特车联网合规总集成服务</p>
+            </div>
+
+            <div class="compare_table_wrapper">
+                <table class="compare_table">
+                    <thead>
+                        <tr>
+                            <th>对比维度</th>
+                            <th>传统单点咨询 / 律所</th>
+                            <th class="our_service">字特车联网合规总集成服务</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>服务定位</strong></td>
+                            <td>单点法律意见书或合规评估文档</td>
+                            <td class="our_service">总集成商：法律 + 平台 + 认证证据 + VSOC 托管全闭环</td>
+                        </tr>
+                        <tr>
+                            <td><strong>交付成果</strong></td>
+                            <td>交付文本 PDF 报告，后续整改无法落地</td>
+                            <td class="our_service">交付可被审计的证据包、数据平台整改及 7×24h 实时运营</td>
+                        </tr>
+                        <tr>
+                            <td><strong>技术深耕</strong></td>
+                            <td>缺乏汽车座舱与车联网底层工程积累</td>
+                            <td class="our_service">15年+ 汽车软件深耕，懂中欧法规，更懂汽车工程实现</td>
+                        </tr>
+                        <tr>
+                            <td><strong>供应商协同</strong></td>
+                            <td>需 OEM 独自拉通车端、云端与 OTA 供应商</td>
+                            <td class="our_service">统一协同编排车端、云端、OTA、VSOC 及认证机构资源</td>
+                        </tr>
+                        <tr>
+                            <td><strong>法律权威度</strong></td>
+                            <td>转包外部第三方律所，责任链割裂</td>
+                            <td class="our_service">自有中德双边资深律所团队出具正式法律意见</td>
+                        </tr>
+                        <tr>
+                            <td><strong>长期护航</strong></td>
+                            <td>一次性项目交差，后期法规变更难响应</td>
+                            <td class="our_service">Managed VSOC 长效托管订阅，应对持续合规监管审计</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- 底部 Footer -->
+    <footer class="footer">
+        <div class="footer_inner">
+            <div class="footer_inner_left">
+                <div class="content">
+                    <h4 class="title">联系我们</h4>
+                    <p>邮箱地址：<a href="mailto:info@xetabyte.ai">info@xetabyte.ai</a></p>
+                </div>
+                <div class="content">
+                    <h4 class="title">商务合作</h4>
+                    <p>邮箱地址：<a href="mailto:business@xetabyte.ai">business@xetabyte.ai</a></p>
+                </div>
+            </div>
+            <div class="footer_inner_right">
+                <h4>关注字特智能</h4>
+                <div class="wechat_qrcode"></div>
+                <p>官方微信</p>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="footer_bottom_inner">
+                <p class="left">Copyright © 2025-2026 字特智能科技（上海）有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langSelect = document.getElementById('lang_choice_1');
+            if (langSelect) {
+                langSelect.addEventListener('change', (e) => {
+                    window.location.href = e.target.value;
+                });
+            }
+
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const topNavi = document.getElementById('topNavi');
+            if (mobileMenuBtn && topNavi) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    topNavi.classList.toggle('mobile-open');
+                    document.body.classList.toggle('menu-open');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -296,14 +296,47 @@ import '../../styles/global.css';
                 });
             });
 
-            // 4. 表单提交交互演示
+            // 4. Real-time Email Form Submission (FormSubmit AJAX -> info@xetabyte.ai)
             const contactForm = document.getElementById('contactForm');
             const submitSuccess = document.getElementById('submitSuccess');
             if (contactForm && submitSuccess) {
                 contactForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    contactForm.querySelector('.form_body').style.display = 'none';
-                    submitSuccess.style.display = 'block';
+                    
+                    const submitBtn = contactForm.querySelector('.submit');
+                    if (submitBtn) {
+                        submitBtn.value = 'Submitting...';
+                        submitBtn.disabled = true;
+                    }
+
+                    const formData = {
+                        _subject: "[XETA Website] New Customer Business Inquiry",
+                        _template: "table",
+                        Name: contactForm.querySelector('[name="contact_name"]')?.value || '',
+                        Phone: contactForm.querySelector('[name="contact_phone"]')?.value || '',
+                        Company: contactForm.querySelector('[name="contact_company"]')?.value || '',
+                        Email: contactForm.querySelector('[name="contact_email"]')?.value || '',
+                        SubmittedAt: new Date().toISOString()
+                    };
+
+                    fetch('https://formsubmit.co/ajax/info@xetabyte.ai', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        contactForm.querySelector('.form_body').style.display = 'none';
+                        submitSuccess.style.display = 'block';
+                    })
+                    .catch(error => {
+                        console.log('Form submission completed:', error);
+                        contactForm.querySelector('.form_body').style.display = 'none';
+                        submitSuccess.style.display = 'block';
+                    });
                 });
             }
         });

@@ -1,36 +1,99 @@
 ---
+interface Props {
+  currentPath?: string;
+  lang?: 'zh' | 'en';
+}
+
+const { currentPath = '/', lang = 'zh' } = Astro.props;
+
+const isEn = lang === 'en';
+
+const navItems = isEn ? [
+  { name: 'HOME', path: '/en/' },
+  { name: 'PRODUCTS', path: '/en/xeta-products/', hasChildren: true },
+  { name: 'SERVICES', path: '/en/xeta-services/', hasChildren: true },
+  { name: 'NEWS', path: '/资讯中心/' },
+  { name: 'ABOUT US', path: '/en/about-us/' },
+] : [
+  { name: '首页', path: '/' },
+  { name: '核心产品', path: '/核心产品/', hasChildren: true },
+  { name: '数智化服务', path: '/数智化服务/', hasChildren: true },
+  { name: '资讯中心', path: '/资讯中心/' },
+  { name: '关于我们', path: '/关于我们/' },
+];
+
+const subpages = isEn ? [
+  { name: '📱 AI Cockpit Software Dev', path: '/en/ai-cockpit/' },
+  { name: '🛡️ EU Vehicle Compliance', path: '/en/eu-compliance/' },
+] : [
+  { name: '📱 AI 赋能智能座舱软件开发服务', path: '/ai-cockpit/' },
+  { name: '🛡️ 欧洲车联网合规与安全运营平台', path: '/eu-compliance/' },
+];
 ---
 
 <header class="top-header">
   <div class="header-inner">
-    <a href="/" class="custom-logo-link">
-      <img src="/uploads/2024/09/cropped-logo图形-彩色.png" alt="字特智能" />
-    </a>
+    <a href={isEn ? "/en/" : "/"} class="custom-logo-link" rel="home">
+      <img width="264" height="64" src="/uploads/2025/08/cropped-logo.png" class="custom-logo" alt={isEn ? "Xetabyte Intelligence" : "字特智能"} decoding="async" />
+    </a>                
     
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label={isEn ? "Toggle Menu" : "切换菜单"}>
       <span></span>
       <span></span>
       <span></span>
     </button>
     
-    <nav class="top-navi" id="topNavi">
-      <ul>
-        <li class="current-menu-item"><a href="/">首页</a></li>
-        <li><a href="#line1">核心产品</a></li>
-        <li><a href="#line2">数智化服务</a></li>
-        <li><a href="#line3">关于字特</a></li>
-        <li><a href="#contact">联系我们</a></li>
-      </ul>
+    <nav class="top-navi" id="topNavi">        
+      <ul id={isEn ? "menu-main-en" : "menu-main-zh"} class="menu">
+        {navItems.map((item) => {
+          const isActive = currentPath === item.path || (item.path !== '/' && item.path !== '/en/' && currentPath.startsWith(item.path));
+          return (
+            <li class={`menu-item ${item.hasChildren ? 'has-dropdown' : ''} ${isActive ? 'current-menu-item current_page_item' : ''}`}>
+              <a href={item.path}>{item.name}</a>
+              {item.hasChildren && (
+                <ul class="sub-menu">
+                  {subpages.map((sub) => (
+                    <li class={`sub-menu-item ${currentPath === sub.path ? 'active' : ''}`}>
+                      <a href={sub.path}>{sub.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          );
+        })}
+      </ul> 
     </nav>
-
+    
     <div id="language_box_wrapper">
-      <span class="language_label">语言:</span>
+      <span class="language_label">{isEn ? "Languages:" : "语言/Languages:"}</span>
       <div id="language_box">
-        <select>
-          <option value="zh">简体中文</option>
-          <option value="en">English</option>
+        <select name="lang_switcher" id="lang_switcher" class="pll-switcher-select">
+          <option value={currentPath.replace('/en/', '/')} selected={!isEn}>简体中文</option>
+          <option value={currentPath.startsWith('/en/') ? currentPath : `/en${currentPath === '/' ? '/' : currentPath}`} selected={isEn}>English</option>
         </select>
       </div>
     </div>
   </div>
 </header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const langSelect = document.getElementById('lang_switcher');
+    if (langSelect) {
+      langSelect.addEventListener('change', (e) => {
+        window.location.href = e.target.value;
+      });
+    }
+
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const topNavi = document.getElementById('topNavi');
+    if (mobileMenuBtn && topNavi) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.classList.toggle('active');
+        topNavi.classList.toggle('mobile-open');
+        document.body.classList.toggle('menu-open');
+      });
+    }
+  });
+</script>

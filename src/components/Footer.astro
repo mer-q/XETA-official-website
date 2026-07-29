@@ -1,38 +1,37 @@
 ---
+interface Props {
+  lang?: 'zh' | 'en';
+}
+
+const { lang = 'zh' } = Astro.props;
+const isEn = lang === 'en';
 ---
 
 <footer class="footer">
-  <div class="footer_inner">
-    <div class="footer_inner_left">
-      <div class="content">
-        <h4>关于字特</h4>
-        <p><a href="#">公司简介</a></p>
-        <p><a href="#">加入我们</a></p>
-        <p><a href="#">新闻中心</a></p>
-      </div>
-      <div class="content">
-        <h4>核心业务</h4>
-        <p><a href="#">智能座舱</a></p>
-        <p><a href="#">自动驾驶</a></p>
-        <p><a href="#">数智服务</a></p>
-      </div>
-      <div class="content">
-        <h4>联系方式</h4>
-        <p>电话: 400-800-8888</p>
-        <p>邮箱: contact@xeta.com</p>
-      </div>
+    <div class="footer_inner">
+        <div class="footer_inner_left">
+            <div class="content">
+                <h4 class="title">{isEn ? "CONTACT US" : "联系我们"}</h4>
+                <p>{isEn ? "Email:" : "邮箱地址："}<a href="mailto:info@xetabyte.ai">info@xetabyte.ai</a></p>
+            </div>
+            <div class="content">
+                <h4 class="title">{isEn ? "BUSINESS COOPERATION" : "商务合作"}</h4>
+                <p>{isEn ? "Email:" : "邮箱地址："}<a href="mailto:business@xetabyte.ai">business@xetabyte.ai</a></p>
+            </div>
+        </div>
+        <div class="footer_inner_right">
+            <h4>{isEn ? "FOLLOW XETA" : "关注字特智能"}</h4>
+            <div class="wechat_qrcode"></div>
+            <p>{isEn ? "Official WeChat" : "官方微信"}</p>
+        </div>
     </div>
-
-    <div class="footer_inner_right">
-      <h4>官方微信</h4>
-      <div class="wechat_qrcode"></div>
-      <p>扫码关注字特智能</p>
+    <div class="footer_bottom">
+        <div class="footer_bottom_inner">
+            <p class="left">
+                {isEn 
+                    ? "Copyright © 2025-2026 XETA Intelligence Technology (Shanghai) Co., Ltd. All rights reserved." 
+                    : "Copyright © 2025-2026 字特智能科技（上海）有限公司 版权所有"}
+            </p>
+        </div>
     </div>
-  </div>
-
-  <div class="footer_bottom">
-    <div class="footer_bottom_inner">
-      <p>&copy; {new Date().getFullYear()} 字特智能 (XETA) 版权所有 · 沪 ICP 备 88888888 号</p>
-    </div>
-  </div>
 </footer>
