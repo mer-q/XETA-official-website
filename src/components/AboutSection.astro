@@ -1,0 +1,48 @@
+---
+interface Props {
+  lang?: 'zh' | 'en';
+}
+
+const { lang = 'zh' } = Astro.props;
+const isEn = lang === 'en';
+---
+
+<div id="line3" class="home_page_part">
+    <div class="about_page_header">
+        <div class="about_page_header_inner">
+            <h1 class="about_page_title wow fadeInUp">{isEn ? "ABOUT US" : "关于我们"}</h1>
+            <span class="about_page_subtitle wow fadeInUp">
+                {isEn ? (
+                    <>
+                        XETA Intelligence is an automotive tech company originating from Germany with global footprints.<br/>
+                        Focusing on next-generation LLM-driven smart cockpits and automotive compliance ecosystems,<br/>
+                        we serve global OEMs in building scalable, certifiable, and high-performance digital systems.<br/><br/>
+                        Our core leadership team spans China, Germany, and the US across automotive tech &amp; AI.
+                    </>
+                ) : (
+                    <>
+                        字特智能是一家发源于德国、布局全球的汽车智能化科技公司。<br> 
+                        公司聚焦新一代基于大模型的智能座舱和其应用生态，<br> 
+                        通过打造国际化汽车数智化平台，服务全球汽车行业在智能化体系的落地和提升。<br> <br><br> 
+                        核心团队来自中德美汽车产业+人工智能领域，<br> 
+                        有开阔的国际视野，在汽车产业界、学术界有广泛的联系和深厚的背景。
+                    </>
+                )}
+            </span>
+            <div class="about_page_header_inner_item_box">
+                <div class="about_page_header_inner_item_box_item wow fadeInUp">
+                    <h3>{isEn ? "MISSION" : "使命"}</h3>
+                    <span>{isEn ? "Building global auto intelligence ecosystem for smart mobility." : "打造国际汽车智能化生态，共创全球智能汽车时代"}</span>
+                </div>
+                <div class="about_page_header_inner_item_box_item wow fadeInUp">
+                    <h3>{isEn ? "VISION" : "愿景"}</h3>
+                    <span>{isEn ? "Becoming the leading international automotive intelligence provider." : "成为国际领先的汽车智能化供应商"}</span>
+                </div>
+                <div class="about_page_header_inner_item_box_item wow fadeInUp">
+                    <h3>{isEn ? "VALUES" : "价值观"}</h3>
+                    <span>{isEn ? "Customer-centric, Professional Excellence, Innovation Breakthrough." : "客户至上，专业尽责，创新突破"}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+---
+interface Props {
+  lang?: 'zh' | 'en';
+}
+
+const { lang = 'zh' } = Astro.props;
+const isEn = lang === 'en';
+---
+
+<div id="line1" class="home_page_part">
+    <h1 class="part_title wow fadeInUp">{isEn ? "CORE PRODUCTS" : "核心产品"}</h1>
+    <span class="part_title_sub wow fadeInUp">{isEn ? "Building International Automotive Intelligence Ecosystem" : "打造国际汽车智能化生态"}</span>
+    
+    <div class="main_product_slider wow fadeInUp">
+        <div class="main_product_slider_box">
+            <!-- 核心产品 1: AI 汽车智能管家 -->
+            <div class="main_product_slider_item active">
+                <img src="/wp-content/uploads/2025/10/main_product_01.jpg" alt="AI 汽车智能管家 XETA Auto AI Agent" />
+                <div class="main_product_slider_item_inner">
+                    <div class="main_product_slider_item_inner_intro">
+                        <h2>{isEn ? "XETA Auto AI Agent" : "AI 汽车智能管家 XETA Auto AI Agent"}</h2>
+                        <span>{isEn ? "LLM-powered intelligent assistant for personalized in-vehicle interactive experience." : "基于大语言模型的智能交互助手，打造个性化车载交互体验"}</span>
+                    </div>
+                    <a class="main_product_slider_item_inner_read_more" href="#line1">{isEn ? "Learn More" : "了解更多"}</a>
+                </div>
+            </div>
+
+            <!-- 核心产品 2: 汽车数智化平台 -->
+            <div class="main_product_slider_item">
+                <img src="/wp-content/uploads/2025/08/main_product_02.png" alt="汽车数智化平台 XETA Auto AI Platform" />
+                <div class="main_product_slider_item_inner">
+                    <div class="main_product_slider_item_inner_intro">
+                        <h2>{isEn ? "XETA Auto AI Platform" : "汽车数智化平台 XETA Auto AI Platform"}</h2>
+                        <span>{isEn ? "Connecting data, models & smart apps for vehicle-wide intelligent platform." : "联通数据、模型与智能应用，构建面向整车的智能系统平台"}</span>
+                    </div>
+                    <a class="main_product_slider_item_inner_read_more" href="#line1">{isEn ? "Learn More" : "了解更多"}</a>
+                </div>
+            </div>
+        </div>
+
+        <ul class="main_product_slider_navigation">
+            <li class="active"></li>
+            <li></li>
+        </ul>
+    </div>
+</div>

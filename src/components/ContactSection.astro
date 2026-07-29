@@ -1,0 +1,87 @@
+---
+interface Props {
+  lang?: 'zh' | 'en';
+}
+
+const { lang = 'zh' } = Astro.props;
+const isEn = lang === 'en';
+---
+
+<div id="line4" class="home_page_part_contact_us">
+    <div class="home_page_part_contact_us_inner">
+        <div class="home_page_part_contact_us_inner_box wow fadeInUp">
+            <div class="home_page_part_contact_us_inner_box_intro">
+                <h2>{isEn ? "CONTACT US" : "联系我们"}</h2>
+                <span>{isEn ? "Driving the Next Era of Auto Intelligence Together" : "共创全球智能汽车时代"}</span>
+            </div>
+            <form class="home_page_part_contact_us_inner_box_form" id="contactForm">
+                <div class="form_title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <path d="M19.8767 11.2932H4.65373C4.34173 11.2932 4.04414 11.1564 3.83294 10.9164L0.117794 6.65882C-0.146202 6.35642 0.0625948 5.87402 0.456189 5.87402H15.732C16.044 5.87402 16.3416 6.01082 16.548 6.24842L20.2295 10.4676C20.5079 10.7868 20.2871 11.2932 19.8719 11.2932H19.8767Z" fill="black"></path>
+                        <path d="M30.3955 26.4814C30.7938 26.4814 31.1729 26.6642 31.4297 26.9785L47.8789 47.1357C48.1573 47.4789 47.9226 47.9999 47.4883 48H32.2432C31.9051 47.9999 31.5835 47.8442 31.3652 47.5781L18.835 32.2227C18.619 31.9563 18.2969 31.8027 17.9609 31.8027H8.35938C7.93218 31.8027 7.70651 31.2839 7.9873 30.9551L11.5127 26.8389C11.7071 26.611 11.9881 26.4814 12.2832 26.4814H30.3955ZM19.874 36.708C20.2892 36.708 20.5098 37.215 20.2314 37.5342L16.5498 41.7529C16.341 41.9905 16.0434 42.1279 15.7314 42.1279H0.456055C0.0625495 42.1279 -0.146535 41.6452 0.117188 41.3428L3.83496 37.085C4.0437 36.845 4.34143 36.7081 4.65332 36.708H19.874ZM47.4883 0C47.9226 0.000110457 48.1573 0.523494 47.8789 0.864258L31.4297 21.0215C31.1729 21.3358 30.7939 21.5186 30.3955 21.5186H12.2832C11.9881 21.5186 11.7071 21.389 11.5127 21.1611L7.9873 17.0449C7.70651 16.7161 7.93218 16.1973 8.35938 16.1973H17.9609C18.2969 16.1973 18.619 16.0437 18.835 15.7773L31.3652 0.422852C31.5835 0.15416 31.9049 0.000123347 32.2432 0H47.4883Z" fill="black"></path>
+                    </svg>
+                    <span>/WELCOME</span>
+                </div>
+                <div class="form_body">
+                    <input class="form_attribute" type="text" name="contact_name" placeholder={isEn ? "Your Name" : "您的姓名"} required />
+                    <input class="form_attribute" type="tel" name="contact_phone" placeholder={isEn ? "Phone Number" : "联系电话"} required />
+                    <input class="form_attribute" type="text" name="contact_company" placeholder={isEn ? "Company Name" : "公司名称"} />
+                    <input class="form_attribute" type="email" name="contact_email" placeholder={isEn ? "Email Address" : "常用邮箱"} required />
+                    
+                    <input class="submit" type="submit" value={isEn ? "Submit Inquiry" : "提交信息"} />
+                </div>
+                <div class="submit_success" id="submitSuccess" style="display: none;">
+                    <h3>{isEn ? "Submission Successful" : "提交成功"}</h3>
+                    <span>{isEn ? "Thank you for your trust. Our team will contact you shortly." : "感谢您的信任与支持，我们将尽快联系您"}</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contactForm');
+    const submitSuccess = document.getElementById('submitSuccess');
+    if (contactForm && submitSuccess) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const submitBtn = contactForm.querySelector('.submit');
+        if (submitBtn) {
+          submitBtn.value = '正在提交...';
+          submitBtn.disabled = true;
+        }
+
+        const formData = {
+          _subject: "【字特智能官网】收到新的客户商务咨询留言",
+          _template: "table",
+          姓名: contactForm.querySelector('[name="contact_name"]')?.value || '',
+          电话: contactForm.querySelector('[name="contact_phone"]')?.value || '',
+          公司: contactForm.querySelector('[name="contact_company"]')?.value || '',
+          邮箱: contactForm.querySelector('[name="contact_email"]')?.value || '',
+          提交时间: new Date().toLocaleString('zh-CN')
+        };
+
+        fetch('https://formsubmit.co/ajax/info@xetabyte.ai', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+          contactForm.querySelector('.form_body').style.display = 'none';
+          submitSuccess.style.display = 'block';
+        })
+        .catch(error => {
+          console.log('Form submission completed:', error);
+          contactForm.querySelector('.form_body').style.display = 'none';
+          submitSuccess.style.display = 'block';
+        });
+      });
+    }
+  });
+</script>

@@ -1,0 +1,44 @@
+---
+interface Props {
+  lang?: 'zh' | 'en';
+}
+
+const { lang = 'zh' } = Astro.props;
+const isEn = lang === 'en';
+---
+
+<div id="line2" class="home_page_part">
+    <h1 class="part_title wow fadeInUp">{isEn ? "DIGITAL SERVICES" : "数智化服务"}</h1>
+    <span class="part_title_sub wow fadeInUp">{isEn ? "Empowering Global OEMs in International Markets" : "助力全球车企拓展国际市场"}</span>
+    
+    <ul class="service_box wow fadeInUp">
+        <li class="service_box_item active">
+            <div class="service_box_item_intro">
+                <h2>{isEn ? "XETA Global Auto Platform" : "XETA国际汽车平台"}</h2>
+                <span>{isEn ? "Full-lifecycle expansion support for global auto markets." : "提供出海全流程支持，助力车企拓展全球市场"}</span>
+            </div>
+            <a href={isEn ? "/en/xeta-services/#service01" : "/数智化服务/#service01"} class="service_box_item_read_more">{isEn ? "Learn More" : "了解更多"}</a>
+        </li>
+        <li class="service_box_item">
+            <div class="service_box_item_intro">
+                <h2>{isEn ? "Certification & Compliance" : "技术认证与合规服务"}</h2>
+                <span>{isEn ? "Global regulations, data privacy & cybersecurity compliance." : "为主机厂提供全球法规适配、数据隐私合规<br>和信息安全等支持，降低出海风险"}</span>
+            </div>
+            <a href={isEn ? "/en/eu-compliance/" : "/eu-compliance/"} class="service_box_item_read_more">{isEn ? "Learn More" : "了解更多"}</a>
+        </li>
+        <li class="service_box_item">
+            <div class="service_box_item_intro">
+                <h2>{isEn ? "Dev & Platform Managed Ops" : "开发与平台运维"}</h2>
+                <span>{isEn ? "Telematics system, data platform & AI app development." : "提供车联网系统、数据平台及AI应用的开发<br>与维护服务，保障系统稳定运行"}</span>
+            </div>
+            <a href={isEn ? "/en/ai-cockpit/" : "/ai-cockpit/"} class="service_box_item_read_more">{isEn ? "Learn More" : "了解更多"}</a>
+        </li>
+        <li class="service_box_item">
+            <div class="service_box_item_intro">
+                <h2>{isEn ? "Market & Product Support" : "市场与产品服务支持"}</h2>
+                <span>{isEn ? "Localization insights & ecosystem expansion analytics." : "结合用户与市场数据，为产品本地化、<br>用户洞察及生态拓展提供支撑"}</span>
+            </div>
+            <a href={isEn ? "/en/xeta-services/#service04" : "/数智化服务/#service04"} class="service_box_item_read_more">{isEn ? "Learn More" : "了解更多"}</a>
+        </li>
+    </ul>
+</div>
