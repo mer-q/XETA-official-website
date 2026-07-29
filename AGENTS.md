@@ -1,6 +1,6 @@
 # 🤖 AGENTS.md — 字特智能官网 AI 维护与协同开发规则
 
-本文件为 Google Antigravity / OpenCode / Cursor / Copilot 等 AI 助手在维护 `XETA-official-website` 仓库时的**强制性行为准则与项目规则**。
+本文件为 AI 助手在维护 `XETA-official-website` 仓库时的**强制性行为准则与项目规则**。
 
 ---
 
@@ -30,7 +30,7 @@
 ## 📂 静态资源放置规范
 
 - **高分辨率产品配图**: 统一存放在 `public/images/products/ai_cockpit/` 及 `public/images/products/compliance/`。
-- **杜绝冗余文件**: 严禁向 `public/uploads/` 添加 WP 多余的低清裁切缩略图 (`-150x150.png`, `-300x300.png`)。
+- **杜绝冗余文件**: 严禁向 `public/uploads/` 添加 WP 多余的低清裁切缩略图。
 
 ---
 
