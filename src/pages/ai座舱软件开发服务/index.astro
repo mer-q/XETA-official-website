@@ -16,6 +16,43 @@ import '../../styles/global.css';
     <link rel="stylesheet" href="/wp-content/themes/xetabyte_ver2/animate.css?ver=4.1.1">
 
     <style>
+        /* PDF 导出与打印时强制保留色彩与暗黑视效背景 */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            header.top-header {
+                position: relative !important;
+            }
+
+            .product_hero_banner {
+                background: linear-gradient(135deg, rgba(13, 19, 43, 0.96) 0%, rgba(26, 36, 71, 0.92) 100%) !important;
+                color: #ffffff !important;
+            }
+
+            .featured_case_banner {
+                background: #0f172a !important;
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+                color: #ffffff !important;
+                border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            }
+
+            .featured_case_banner h3, .case_content p {
+                color: #ffffff !important;
+            }
+
+            .case_quick_stats {
+                background: rgba(0, 0, 0, 0.4) !important;
+            }
+
+            .stat_box .num {
+                color: #00d084 !important;
+            }
+        }
+
         .product_hero_banner {
             width: 100%;
             min-height: 480px;

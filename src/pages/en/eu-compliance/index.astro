@@ -16,6 +16,76 @@ import '../../../styles/global.css';
     <link rel="stylesheet" href="/wp-content/themes/xetabyte_ver2/animate.css?ver=4.1.1">
 
     <style>
+        /* PDF Export & Print Color Adjust */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            header.top-header {
+                position: relative !important;
+            }
+
+            .page_wrapper {
+                padding-top: 0 !important;
+            }
+
+            .product_hero_banner {
+                background: linear-gradient(135deg, rgba(11, 23, 39, 0.96) 0%, rgba(23, 42, 69, 0.92) 100%) !important;
+                color: #ffffff !important;
+            }
+
+            .product_hero_inner h1, .product_hero_inner p {
+                color: #ffffff !important;
+            }
+
+            .unified_integrator_section {
+                background: #0f172a !important;
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+                color: #ffffff !important;
+                border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            }
+
+            .integrator_top_header h3 {
+                color: #00d084 !important;
+            }
+
+            .integrator_top_header p, .case_content p {
+                color: #e2e8f0 !important;
+            }
+
+            .int_box {
+                background: rgba(255, 255, 255, 0.08) !important;
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            }
+
+            .int_box h4 {
+                color: #38bdf8 !important;
+            }
+
+            .int_box ul li {
+                color: #f1f5f9 !important;
+            }
+
+            .case_content h4 {
+                color: #ffffff !important;
+            }
+
+            .case_quick_stats {
+                background: rgba(0, 0, 0, 0.4) !important;
+            }
+
+            .stat_box .num {
+                color: #00d084 !important;
+            }
+
+            .stat_box .label {
+                color: #cbd5e1 !important;
+            }
+        }
+
         .page_wrapper {
             padding-top: 80px;
         }
